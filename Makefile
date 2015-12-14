@@ -6,7 +6,7 @@
 #    By: mdos-san <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2015/12/14 14:55:19 by mdos-san          #+#    #+#              #
-#    Updated: 2015/12/14 15:47:13 by mdos-san         ###   ########.fr        #
+#    Updated: 2015/12/14 16:10:28 by mdos-san         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,9 +14,10 @@ NAME=		fdf
 
 COMPILER=	gcc
 FLAGS=		-Werror -Wextra -Wall
-LIBS=		-I./includes -L. -lft # -lmlx -framework OpenGL -framework AppKit
+INCLUDES=	-I./includes
+LIBS=		libft.a # -lmlx -framework OpenGL -framework AppKit
 
-SRC_C=		parse_file.c	main.c
+SRC_C=		main.c
 
 SRC_O=$(SRC_C:.c=.o)
 
@@ -36,10 +37,10 @@ libmlx.a:
 	make clean -C minilibx_macos
 
 %.o: %.c
-	$(COMPILER) $(FLAGS) $(LIBS) -c $<
+	$(COMPILER) $(FLAGS) $(INCLUDES) -c $<
 
 $(NAME):
-	$(COMPILER) $(FLAGS) -o $(NAME) $(SRC_O) $(LIBS)
+	$(COMPILER) $(FLAGS) $(LIBS) -o $(NAME) $(SRC_O)
 
 clean:
 	rm -rf $(SRC_O)
