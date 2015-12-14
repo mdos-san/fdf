@@ -38,6 +38,6 @@ clean:
 	rm -rf $(SRC_O)
 
 fclean: clean
-	rm -rf fdf libft.a libmlx.a includes/libft.h
+	rm -rf fdf libft.a libmlx.a
 
 re: fclean all
