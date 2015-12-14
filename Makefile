@@ -1,15 +1,3 @@
-# **************************************************************************** #
-#                                                                              #
-#                                                         :::      ::::::::    #
-#    Makefile                                           :+:      :+:    :+:    #
-#                                                     +:+ +:+         +:+      #
-#    By: mdos-san <marvin@42.fr>                    +#+  +:+       +#+         #
-#                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2015/12/14 14:55:19 by mdos-san          #+#    #+#              #
-#    Updated: 2015/12/14 16:10:28 by mdos-san         ###   ########.fr        #
-#                                                                              #
-# **************************************************************************** #
-
 NAME=		fdf
 
 COMPILER=	gcc
@@ -17,11 +5,15 @@ FLAGS=		-Werror -Wextra -Wall
 INCLUDES=	-I./includes
 LIBS=		libft.a # -lmlx -framework OpenGL -framework AppKit
 
-SRC_C=		main.c
+SRC_C=		chain_new.c\
+			chain_add.c\
+			parse_file.c\
+			assign_pos.c\
+			main.c
 
 SRC_O=$(SRC_C:.c=.o)
 
-all: libft.a libft.h libmlx.a $(SRC_O) $(NAME)
+all: libft.a libft.h $(SRC_O) $(NAME)
 
 libft.a:
 	make re -C libft
@@ -40,12 +32,12 @@ libmlx.a:
 	$(COMPILER) $(FLAGS) $(INCLUDES) -c $<
 
 $(NAME):
-	$(COMPILER) $(FLAGS) $(LIBS) -o $(NAME) $(SRC_O)
+	$(COMPILER) $(FLAGS) $(INCLUDES) -o $(NAME) $(SRC_O) $(LIBS)
 
 clean:
 	rm -rf $(SRC_O)
 
 fclean: clean
-	rm -rf fdf libft.a libmlx.a
+	rm -rf fdf libft.a libmlx.a includes/libft.h
 
 re: fclean all

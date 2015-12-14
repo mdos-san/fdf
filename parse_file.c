@@ -6,34 +6,26 @@
 /*   By: mdos-san <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/14 15:39:29 by mdos-san          #+#    #+#             */
-/*   Updated: 2015/12/14 16:23:37 by mdos-san         ###   ########.fr       */
+/*   Updated: 2015/12/14 23:51:01 by mdos-san         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fdf.h"
 
-static int	count_x(char *line)
-{
-	int	i;
-	int nb;
-
-	i = 0;
-	nb = 0;
-	while (line[i] != 0)
-	{
-		if (line[i] ==  ' ')
-			nb++;
-		i++;
-	}
-	return (nb++);
-}
-
-int	**parse_file(int fd)
+t_chain		*parse_file(int fd)
 {
 	char	*line;
-	t_lst	*lst_ln;
+	t_chain	*chain;
+	t_chain	*cursor;
 
-	get_next_line(fd, &line);
-	t_lst = ft_lstnew();
-
+	line = 0;
+	chain = chain_new();
+	cursor = chain;
+	while(get_next_line(fd, &line))
+	{
+		cursor->pos = ft_strsplit(line, ' ');
+		chain_add(cursor);
+		cursor = cursor->next;
+	}
+	return (chain);
 }
