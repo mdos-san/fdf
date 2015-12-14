@@ -6,7 +6,7 @@
 #    By: mdos-san <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2015/11/23 12:59:09 by mdos-san          #+#    #+#              #
-#    Updated: 2015/12/10 18:35:01 by mdos-san         ###   ########.fr        #
+#    Updated: 2015/12/14 15:51:36 by mdos-san         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -35,7 +35,7 @@ SRC_C=		ft_memset.c		ft_bzero.c		ft_memcpy.c\
 			ft_strsplit.c	ft_putnbr.c		ft_putnbr_fd.c\
 			ft_itoa.c		ft_lstnew.c		ft_lstdelone.c\
 			ft_lstdel.c		ft_lstadd.c		ft_lstiter.c\
-			ft_lstmap.c		ft_lstnew_cpy.c
+			ft_lstmap.c		ft_lstnew_cpy.c	get_next_line.c
 
 SRC_O=$(SRC_C:.c=.o)
 
