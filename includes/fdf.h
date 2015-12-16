@@ -6,7 +6,7 @@
 /*   By: mdos-san <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/12 09:24:25 by mdos-san          #+#    #+#             */
-/*   Updated: 2015/12/16 18:06:19 by mdos-san         ###   ########.fr       */
+/*   Updated: 2015/12/16 18:12:34 by mdos-san         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,6 +48,12 @@ typedef struct		s_pnt
 	int	x;
 	int	y;
 }					t_pnt;
+
+typedef struct		s_vec
+{
+	int	x;
+	int	y;
+}					t_vec;
 
 t_chain	*chain_new(void);
 void	chain_add(t_chain *chain);
