@@ -6,7 +6,7 @@
 /*   By: mdos-san <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/16 16:25:03 by mdos-san          #+#    #+#             */
-/*   Updated: 2015/12/16 19:35:27 by mdos-san         ###   ########.fr       */
+/*   Updated: 2015/12/16 19:42:15 by mdos-san         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,12 @@ int	key_hook(int keycode, t_env *env)
 		exit(0);
 	}
 	return (1);
+}
+
+int	expose()
+{
+
+
 }
 
 void	start_rendering(t_chain *chain)

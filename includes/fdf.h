@@ -6,7 +6,7 @@
 /*   By: mdos-san <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/12 09:24:25 by mdos-san          #+#    #+#             */
-/*   Updated: 2015/12/16 18:39:30 by mdos-san         ###   ########.fr       */
+/*   Updated: 2015/12/16 19:42:13 by mdos-san         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,6 +58,14 @@ typedef struct		s_vec
 	int	x;
 	int	y;
 }					t_vec;
+
+typedef struct		s_expar
+{
+	t_env	*env;
+	t_img	*img;
+	t_pnt	*pnt;
+	t_chain	*chain;
+}					t_expar;
 
 t_chain	*chain_new(void);
 void	chain_add(t_chain *chain);
