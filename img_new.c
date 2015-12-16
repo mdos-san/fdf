@@ -6,7 +6,7 @@
 /*   By: mdos-san <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/16 16:40:00 by mdos-san          #+#    #+#             */
-/*   Updated: 2015/12/16 16:54:03 by mdos-san         ###   ########.fr       */
+/*   Updated: 2015/12/16 17:09:33 by mdos-san         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,8 @@ t_img	*img_new(void *mlx, int	width, int height)
 	new->width = width;
 	new->height = height;
 	new->data = mlx_get_data_addr(new->img,
-			&(new->bits_per_pixel),
-			&(new->size_line),
-			&(new->endian));
+			&new->bits_per_pixel,
+			&new->size_line,
+			&new->endian);
 	return (new);
 }
