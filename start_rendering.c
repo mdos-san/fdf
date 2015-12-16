@@ -6,11 +6,21 @@
 /*   By: mdos-san <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/16 16:25:03 by mdos-san          #+#    #+#             */
-/*   Updated: 2015/12/16 18:44:33 by mdos-san         ###   ########.fr       */
+/*   Updated: 2015/12/16 19:35:27 by mdos-san         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fdf.h"
+
+int	key_hook(int keycode, t_env *env)
+{
+	if (keycode == 53)
+	{
+		mlx_destroy_window(env->mlx, env->win);
+		exit(0);
+	}
+	return (1);
+}
 
 void	start_rendering(t_chain *chain)
 {
@@ -26,6 +36,6 @@ void	start_rendering(t_chain *chain)
 	img = img_new(env->mlx, WIDTH, HEIGHT);
 	draw_test(env->mlx, chain, &pnt, img);
 	mlx_put_image_to_window(env->mlx, env->win, img->img, 0, 0);
-	chain_count(chain);
+	mlx_key_hook(env->win, key_hook, env);
 	mlx_loop(env->mlx);
 }
