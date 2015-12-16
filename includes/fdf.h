@@ -6,7 +6,7 @@
 /*   By: mdos-san <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/12 09:24:25 by mdos-san          #+#    #+#             */
-/*   Updated: 2015/12/16 18:16:39 by mdos-san         ###   ########.fr       */
+/*   Updated: 2015/12/16 18:20:17 by mdos-san         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,6 +66,6 @@ t_chain	*parse_file(int fd);
 void	assign_pos(t_chain *chain);
 void	start_rendering(t_chain *chain);
 t_img	*img_new(void *mlx, int	width, int height);
-void	img_put_pixel(void *mlx, t_img *img, t_pnt *pnt, unsigned int color);
+void	img_put_pixel(void *mlx, t_img *img, t_pnt *pnt, int color);
 
 #endif
