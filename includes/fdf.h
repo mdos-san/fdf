@@ -6,7 +6,7 @@
 /*   By: mdos-san <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/12 09:24:25 by mdos-san          #+#    #+#             */
-/*   Updated: 2015/12/16 18:12:34 by mdos-san         ###   ########.fr       */
+/*   Updated: 2015/12/16 18:16:39 by mdos-san         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,10 @@
 # include <stdlib.h>
 # define WIDTH 800
 # define HEIGHT 600
+# define WHITE 0xFFFFFF
+# define RED 0xFF0000
+# define GREEN 0x00FF00
+# define BLUE 0x0000FF
 
 typedef struct		s_chain
 {
