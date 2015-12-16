@@ -3,17 +3,20 @@ NAME=		fdf
 COMPILER=	gcc
 FLAGS=		-Werror -Wextra -Wall
 INCLUDES=	-I./includes
-LIBS=		libft.a # -lmlx -framework OpenGL -framework AppKit
+LIBS=		libft.a -lmlx -framework OpenGL -framework AppKit
 
 SRC_C=		chain_new.c\
 			chain_add.c\
+			chain_count.c\
 			parse_file.c\
 			assign_pos.c\
+			start_rendering.c\
+			img_new.c\
 			main.c
 
 SRC_O=$(SRC_C:.c=.o)
 
-all: libft.a libft.h $(SRC_O) $(NAME)
+all: libft.a libft.h libmlx.a $(SRC_O) $(NAME)
 
 libft.a:
 	make re -C libft

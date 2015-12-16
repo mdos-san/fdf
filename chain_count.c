@@ -1,30 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   chain_count.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mdos-san <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/12/14 15:39:19 by mdos-san          #+#    #+#             */
-/*   Updated: 2015/12/16 16:24:39 by mdos-san         ###   ########.fr       */
+/*   Created: 2015/12/16 16:17:06 by mdos-san          #+#    #+#             */
+/*   Updated: 2015/12/16 16:23:23 by mdos-san         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <sys/types.h>
-#include <sys/stat.h>
-#include <fcntl.h>
 #include "fdf.h"
 
-int	main(int ac, char **av)
+int	chain_count(t_chain *chain)
 {
-	int	fd;
-	t_chain	*chain;
+	int		i;
+	t_chain	*cursor;
 
-	if (ac != 2)
+	i = 0;
+	cursor = chain;
+	if (!chain)
 		return (0);
-	fd = open(av[1], O_RDONLY);
-	chain = parse_file(fd);
-	assign_pos(chain);
-	start_rendering(chain);
-	return (0);
+	while (cursor->next)
+	{
+		cursor = cursor->next;
+		i++;
+	}
+	return (i);
 }

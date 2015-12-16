@@ -1,30 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   img_new.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mdos-san <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/12/14 15:39:19 by mdos-san          #+#    #+#             */
-/*   Updated: 2015/12/16 16:24:39 by mdos-san         ###   ########.fr       */
+/*   Created: 2015/12/16 16:40:00 by mdos-san          #+#    #+#             */
+/*   Updated: 2015/12/16 16:48:14 by mdos-san         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <sys/types.h>
-#include <sys/stat.h>
-#include <fcntl.h>
 #include "fdf.h"
 
-int	main(int ac, char **av)
+t_img	*img_new(void *mlx, int	width, int height)
 {
-	int	fd;
-	t_chain	*chain;
+	t_img	*new;
 
-	if (ac != 2)
-		return (0);
-	fd = open(av[1], O_RDONLY);
-	chain = parse_file(fd);
-	assign_pos(chain);
-	start_rendering(chain);
-	return (0);
+	new = (t_img*)malloc(sizeof(t_env));
+	new = mlx_new_image(mlx, width, height);
+	new->width = width;
+	new->height = height;
+	return (new);
 }
