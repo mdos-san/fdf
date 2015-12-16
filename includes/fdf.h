@@ -6,7 +6,7 @@
 /*   By: mdos-san <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/12 09:24:25 by mdos-san          #+#    #+#             */
-/*   Updated: 2015/12/16 17:10:59 by mdos-san         ###   ########.fr       */
+/*   Updated: 2015/12/16 18:06:19 by mdos-san         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,6 +43,12 @@ typedef struct		s_img
 	int		endian;
 }					t_img;
 
+typedef struct		s_pnt
+{
+	int	x;
+	int	y;
+}					t_pnt;
+
 t_chain	*chain_new(void);
 void	chain_add(t_chain *chain);
 int		chain_count(t_chain *chain);
@@ -50,6 +56,6 @@ t_chain	*parse_file(int fd);
 void	assign_pos(t_chain *chain);
 void	start_rendering(t_chain *chain);
 t_img	*img_new(void *mlx, int	width, int height);
-void	img_put_pixel(t_img img, int x, int y);
+void	img_put_pixel(void *mlx, t_img *img, t_pnt *pnt, unsigned int color);
 
 #endif
