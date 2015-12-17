@@ -39,7 +39,7 @@ libmlx.a:
 %.o: %.c
 	$(COMPILER) $(FLAGS) $(INCLUDES) -c $<
 
-$(NAME): $(SRC_C)
+$(NAME): $(SRC_C) includes/fdf.h
 	$(COMPILER) $(FLAGS) $(INCLUDES) -o $(NAME) $(SRC_O) $(LIBS)
 
 clean:
