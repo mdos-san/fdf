@@ -3,7 +3,8 @@ NAME=		fdf
 COMPILER=	gcc
 FLAGS=		-Werror -Wextra -Wall
 INCLUDES=	-I./includes
-LIBS=		libft.a -lmlx -framework OpenGL -framework AppKit
+LIBS2=		libft.a libmlx.a -lX11 -lXext -lm
+LIBS=		libft.a  -lmlx -framework OpenGL -framework AppKit -lm
 
 SRC_C=		chain_new.c\
 			chain_add.c\
@@ -38,6 +39,9 @@ libmlx.a:
 
 %.o: %.c
 	$(COMPILER) $(FLAGS) $(INCLUDES) -c $<
+
+ubuntu: $(SRC_O) $(SRC_C) includes/fdf.h
+	$(COMPILER) $(FLAGS) $(INCLUDES) -o $(NAME) $(SRC_O) $(LIBS2)
 
 $(NAME): $(SRC_C) includes/fdf.h
 	$(COMPILER) $(FLAGS) $(INCLUDES) -o $(NAME) $(SRC_O) $(LIBS)

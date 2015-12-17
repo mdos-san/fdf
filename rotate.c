@@ -26,7 +26,6 @@ void	rotate_z(t_par *par, double angle)
 	angle = angle * M_PI / 180;
 	par->vx->x = par->vx->x * cos(angle) - par->vx->y * sin(angle);
 	par->vx->y = par->vx->x * sin(angle) + par->vx->y * cos(angle);
-
 	par->vy->x = par->vy->x * cos(angle) - par->vy->y * sin(angle);
 	par->vy->y = par->vy->x * sin(angle) + par->vy->y * cos(angle);
 }

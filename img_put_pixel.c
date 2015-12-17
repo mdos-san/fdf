@@ -14,5 +14,6 @@
 
 void	img_put_pixel(t_par *par, t_pnt pnt, int color)
 {
-	*(unsigned int*)(par->data + (int)(pnt.x) * par->bpp / 8 + par->sl * (int)(pnt.y)) = mlx_get_color_value(par->mlx, color);
+	if ((0 < pnt.x && pnt.x < WIDTH) && (0 < pnt.y && pnt.y < HEIGHT))
+		*(unsigned int*)(par->data + (int)(pnt.x) * par->bpp / 8 + par->sl * (int)(pnt.y)) = mlx_get_color_value(par->mlx, color);
 }
