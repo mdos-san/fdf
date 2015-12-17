@@ -6,7 +6,7 @@
 /*   By: mdos-san <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/12 09:24:25 by mdos-san          #+#    #+#             */
-/*   Updated: 2015/12/17 17:28:33 by mdos-san         ###   ########.fr       */
+/*   Updated: 2015/12/17 17:31:48 by mdos-san         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,17 +29,6 @@ typedef struct		s_chain
 	int				size;
 	struct s_chain	*next;
 }					t_chain;
-
-typedef struct		s_img
-{
-	void	*img;
-	int		width;
-	int		height;
-	char	*data;
-	int		bits_per_pixel;
-	int		size_line;
-	int		endian;
-}					t_img;
 
 typedef struct		s_pnt
 {
@@ -70,8 +59,6 @@ int		chain_count(t_chain *chain);
 t_chain	*parse_file(int fd);
 void	assign_pos(t_chain *chain);
 void	start_rendering(void);
-t_img	*img_new(void *mlx, int	width, int height);
 void	img_put_pixel(t_par *par, int x, int y, int color);
-void	draw_test(void *mlx, t_chain *chain, t_pnt *o, t_img *img);
 
 #endif
