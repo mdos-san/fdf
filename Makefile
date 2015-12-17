@@ -13,6 +13,9 @@ SRC_C=		chain_new.c\
 			start_rendering.c\
 			img_put_pixel.c\
 			img_clear.c\
+			vec_init.c\
+			pnt_init.c\
+			draw.c\
 			main.c
 
 SRC_O=$(SRC_C:.c=.o)
@@ -35,7 +38,7 @@ libmlx.a:
 %.o: %.c
 	$(COMPILER) $(FLAGS) $(INCLUDES) -c $<
 
-$(NAME):
+$(NAME): $(SRC_C)
 	$(COMPILER) $(FLAGS) $(INCLUDES) -o $(NAME) $(SRC_O) $(LIBS)
 
 clean:

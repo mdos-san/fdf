@@ -6,28 +6,14 @@
 /*   By: mdos-san <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/16 16:25:03 by mdos-san          #+#    #+#             */
-/*   Updated: 2015/12/17 18:45:28 by mdos-san         ###   ########.fr       */
+/*   Updated: 2015/12/17 19:50:57 by mdos-san         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fdf.h"
 #include <stdio.h>
 
-int		loop_hook(t_par *par)
-{
-	if (par->i == WIDTH)
-	{
-		par->i = 0;
-		img_clear(par);
-	}
-	img_put_pixel(par, par->i++, 10, GREEN);
-	mlx_clear_window(par->mlx, par->win);
-	mlx_put_image_to_window(par->mlx, par->win, par->img, 0, 0);
-	ft_putendl("refresh");
-	return (1);
-}
-
-void	start_rendering(void)
+void	start_rendering(t_chain *chain)
 {
 	t_par	*par;
 
@@ -36,7 +22,11 @@ void	start_rendering(void)
 	par->win = mlx_new_window(par->mlx, WIDTH, HEIGHT, "test");
 	par->img = mlx_new_image(par->mlx, WIDTH, HEIGHT);
 	par->data = mlx_get_data_addr(par->img, &par->bpp, &par->sl, &par->ed);
-	par->i = 0;
-	mlx_loop_hook(par->mlx, loop_hook, par);
+	par->chain = chain;
+	ft_putnbr(par->chain->size);
+	par->o = pnt_init((WIDTH - par->chain->size * LEN) / 2,
+						(HEIGHT - chain_count(par->chain) * LEN) / 2, 0);
+	draw(par);
+	mlx_put_image_to_window(par->mlx, par->win, par->img, 0, 0);
 	mlx_loop(par->mlx);
 }

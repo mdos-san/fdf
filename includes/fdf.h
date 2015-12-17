@@ -6,7 +6,7 @@
 /*   By: mdos-san <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/12 09:24:25 by mdos-san          #+#    #+#             */
-/*   Updated: 2015/12/17 18:44:35 by mdos-san         ###   ########.fr       */
+/*   Updated: 2015/12/17 19:48:05 by mdos-san         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@
 # define RED 0xFF0000
 # define GREEN 0x00FF00
 # define BLUE 0x0000FF
+# define LEN 10
 
 typedef struct		s_chain
 {
@@ -32,14 +33,16 @@ typedef struct		s_chain
 
 typedef struct		s_pnt
 {
-	int	x;
-	int	y;
+	double	x;
+	double	y;
+	double	z;
 }					t_pnt;
 
 typedef struct		s_vec
 {
-	int	x;
-	int	y;
+	double	x;
+	double	y;
+	double	z;
 }					t_vec;
 
 typedef struct		s_par
@@ -51,7 +54,8 @@ typedef struct		s_par
 	int		bpp;
 	int		sl;
 	int		ed;
-	int		i;
+	t_chain	*chain;
+	t_pnt	*o;
 }					t_par;
 
 t_chain	*chain_new(void);
@@ -59,8 +63,11 @@ void	chain_add(t_chain *chain);
 int		chain_count(t_chain *chain);
 t_chain	*parse_file(int fd);
 void	assign_pos(t_chain *chain);
-void	start_rendering(void);
-void	img_put_pixel(t_par *par, int x, int y, int color);
+void	start_rendering(t_chain *chain);
+void	img_put_pixel(t_par *par, t_pnt pnt, int color);
 void	img_clear(t_par *par);
+t_vec	*vec_init(double x, double y, double z);
+t_pnt	*pnt_init(double x, double y, double z);
+void	draw(t_par *par);
 
 #endif
