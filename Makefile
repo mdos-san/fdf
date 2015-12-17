@@ -16,6 +16,7 @@ SRC_C=		chain_new.c\
 			vec_init.c\
 			pnt_init.c\
 			draw.c\
+			rotate.c\
 			main.c
 
 SRC_O=$(SRC_C:.c=.o)

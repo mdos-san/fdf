@@ -6,7 +6,7 @@
 /*   By: mdos-san <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/17 19:03:46 by mdos-san          #+#    #+#             */
-/*   Updated: 2015/12/17 19:41:12 by mdos-san         ###   ########.fr       */
+/*   Updated: 2015/12/17 20:23:55 by mdos-san         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,31 +19,31 @@ void	translate_pnt(t_pnt *pnt, t_vec vec)
 	pnt->z += vec.z;
 }
 
+
 void	draw(t_par *par)
 {
 	int		i;
 	int		j;
+	t_chain	*chain;
 	t_pnt	pnt;
 	t_pnt	tmp;
-	t_vec	*x;
-	t_vec	*y;
-	t_vec	*z;
 
 	i = 0;
 	j = 0;
+	chain = par->chain;
 	pnt.x = par->o->x;
 	pnt.y = par->o->y;
-	x = vec_init(10, 0, 0);
-	y = vec_init(0, 10, 0);
-	z = vec_init(0, 0, 10);
-	while (par->chain)
+	while (chain)
 	{
-		while (i < par->chain->size)
+		while (i < chain->size)
 		{
-			tmp.x = pnt.x + z->x * par->chain->tab[i];
-			tmp.y = pnt.y + z->y * par->chain->tab[i];
-			img_put_pixel(par, tmp, WHITE);
-			translate_pnt(&pnt, *x);
+			tmp.x = pnt.x + par->vz->x * chain->tab[i] / (LEN / 2);
+			tmp.y = pnt.y + par->vz->y * chain->tab[i] / (LEN / 2);
+			if (chain->tab[i] != 0)
+				img_put_pixel(par, tmp, RED);
+			else
+				img_put_pixel(par, tmp, WHITE);
+			translate_pnt(&pnt, *par->vx);
 			i++;
 		}
 		i = -1;
@@ -51,8 +51,8 @@ void	draw(t_par *par)
 		pnt.x = par->o->x;
 		pnt.y = par->o->y;
 		while (++i < j)
-			translate_pnt(&pnt, *y);
+			translate_pnt(&pnt, *par->vy);
 		i = 0;
-		par->chain = par->chain->next;
+		chain = chain->next;
 	}
 }
