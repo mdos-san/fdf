@@ -22,7 +22,7 @@ SRC_C=		chain_new.c\
 
 SRC_O=$(SRC_C:.c=.o)
 
-all: libft.a libft.h libmlx.a $(SRC_O) $(NAME)
+all: libft.a includes/libft.h libmlx.a $(SRC_O) $(NAME)
 
 libft.a:
 	make re -C libft
@@ -40,7 +40,7 @@ libmlx.a:
 %.o: %.c
 	$(COMPILER) $(FLAGS) $(INCLUDES) -c $<
 
-ubuntu: $(SRC_O) $(SRC_C) includes/fdf.h
+ubuntu: $(SRC_O) $(SRC_C) libft.a includes/libft.h includes/fdf.h
 	$(COMPILER) $(FLAGS) $(INCLUDES) -o $(NAME) $(SRC_O) $(LIBS2)
 
 $(NAME): $(SRC_C) includes/fdf.h
