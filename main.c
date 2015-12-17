@@ -6,7 +6,7 @@
 /*   By: mdos-san <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/14 15:39:19 by mdos-san          #+#    #+#             */
-/*   Updated: 2015/12/16 16:24:39 by mdos-san         ###   ########.fr       */
+/*   Updated: 2015/12/17 17:12:38 by mdos-san         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,6 @@ int	main(int ac, char **av)
 	fd = open(av[1], O_RDONLY);
 	chain = parse_file(fd);
 	assign_pos(chain);
-	start_rendering(chain);
+	start_rendering();
 	return (0);
 }

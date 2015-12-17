@@ -6,7 +6,7 @@
 /*   By: mdos-san <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/12 09:24:25 by mdos-san          #+#    #+#             */
-/*   Updated: 2015/12/16 19:42:13 by mdos-san         ###   ########.fr       */
+/*   Updated: 2015/12/17 17:28:33 by mdos-san         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,12 +29,6 @@ typedef struct		s_chain
 	int				size;
 	struct s_chain	*next;
 }					t_chain;
-
-typedef struct		s_env
-{
-	void			*mlx;
-	void			*win;
-}					t_env;
 
 typedef struct		s_img
 {
@@ -59,22 +53,25 @@ typedef struct		s_vec
 	int	y;
 }					t_vec;
 
-typedef struct		s_expar
+typedef struct		s_par
 {
-	t_env	*env;
-	t_img	*img;
-	t_pnt	*pnt;
-	t_chain	*chain;
-}					t_expar;
+	void	*mlx;
+	void	*win;
+	void	*img;
+	char	*data;
+	int		bpp;
+	int		sl;
+	int		ed;
+}					t_par;
 
 t_chain	*chain_new(void);
 void	chain_add(t_chain *chain);
 int		chain_count(t_chain *chain);
 t_chain	*parse_file(int fd);
 void	assign_pos(t_chain *chain);
-void	start_rendering(t_chain *chain);
+void	start_rendering(void);
 t_img	*img_new(void *mlx, int	width, int height);
-void	img_put_pixel(void *mlx, t_img *img, t_pnt *pnt, int color);
+void	img_put_pixel(t_par *par, int x, int y, int color);
 void	draw_test(void *mlx, t_chain *chain, t_pnt *o, t_img *img);
 
 #endif

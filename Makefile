@@ -13,7 +13,6 @@ SRC_C=		chain_new.c\
 			start_rendering.c\
 			img_new.c\
 			img_put_pixel.c\
-			draw_test.c\
 			main.c
 
 SRC_O=$(SRC_C:.c=.o)
