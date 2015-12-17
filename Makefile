@@ -11,8 +11,8 @@ SRC_C=		chain_new.c\
 			parse_file.c\
 			assign_pos.c\
 			start_rendering.c\
-			img_new.c\
 			img_put_pixel.c\
+			img_clear.c\
 			main.c
 
 SRC_O=$(SRC_C:.c=.o)
