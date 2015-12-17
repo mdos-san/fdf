@@ -6,7 +6,7 @@
 /*   By: mdos-san <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/12 09:24:25 by mdos-san          #+#    #+#             */
-/*   Updated: 2015/12/17 20:26:53 by mdos-san         ###   ########.fr       */
+/*   Updated: 2015/12/17 21:01:08 by mdos-san         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,6 +60,7 @@ typedef struct		s_par
 	t_vec	*vx;
 	t_vec	*vy;
 	t_vec	*vz;
+	double	angle;
 }					t_par;
 
 t_chain	*chain_new(void);
@@ -74,5 +75,6 @@ t_vec	*vec_init(double x, double y, double z);
 t_pnt	*pnt_init(double x, double y, double z);
 void	draw(t_par *par);
 void	rotate_x(t_par *par, double angle);
+void	rotate_z(t_par *par, double angle);
 
 #endif

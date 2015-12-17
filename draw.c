@@ -6,7 +6,7 @@
 /*   By: mdos-san <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/17 19:03:46 by mdos-san          #+#    #+#             */
-/*   Updated: 2015/12/17 20:23:55 by mdos-san         ###   ########.fr       */
+/*   Updated: 2015/12/17 20:36:13 by mdos-san         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ void	draw(t_par *par)
 			tmp.x = pnt.x + par->vz->x * chain->tab[i] / (LEN / 2);
 			tmp.y = pnt.y + par->vz->y * chain->tab[i] / (LEN / 2);
 			if (chain->tab[i] != 0)
-				img_put_pixel(par, tmp, RED);
+				img_put_pixel(par, tmp, GREEN);
 			else
 				img_put_pixel(par, tmp, WHITE);
 			translate_pnt(&pnt, *par->vx);
