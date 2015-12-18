@@ -1,3 +1,15 @@
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    Makefile                                           :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: mdos-san <marvin@42.fr>                    +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2015/12/18 17:35:31 by mdos-san          #+#    #+#              #
+#    Updated: 2015/12/18 17:49:55 by mdos-san         ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
+
 NAME=		fdf
 
 COMPILER=	gcc
@@ -6,18 +18,16 @@ INCLUDES=	-I./includes
 LIBS2=		libft.a libmlx.a -lX11 -lXext -lm
 LIBS=		libft.a  -lmlx -framework OpenGL -framework AppKit -lm
 
-SRC_C=		chain_new.c\
-			chain_add.c\
-			chain_count.c\
-			parse_file.c\
-			assign_pos.c\
+SRC_C=\
+			chain_new.c\
 			start_rendering.c\
 			img_put_pixel.c\
 			img_clear.c\
 			vec_init.c\
 			pnt_init.c\
+			pnt_new.c\
 			draw.c\
-			rotate.c\
+			get_pnt.c\
 			main.c
 
 SRC_O=$(SRC_C:.c=.o)

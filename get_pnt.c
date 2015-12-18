@@ -1,31 +1,48 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   parse_file.c                                       :+:      :+:    :+:   */
+/*   get_pnt.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mdos-san <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/12/14 15:39:29 by mdos-san          #+#    #+#             */
-/*   Updated: 2015/12/14 23:51:01 by mdos-san         ###   ########.fr       */
+/*   Created: 2015/12/18 15:07:28 by mdos-san          #+#    #+#             */
+/*   Updated: 2015/12/18 18:01:08 by mdos-san         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fdf.h"
 
-t_chain		*parse_file(int fd)
+void	get_pnt(t_par *par)
 {
 	char	*line;
-	t_chain	*chain;
-	t_chain	*cursor;
+	char	**tab;
+	t_chain	*tmp;
+	t_chain	*cur;
+	int		i;
+	int		y;
 
+	i = 0;
+	y = 0;
+	tab = 0;
 	line = 0;
-	chain = chain_new();
-	cursor = chain;
-	while(get_next_line(fd, &line))
+	par->chain = chain_new();
+	cur = par->chain;
+	while (get_next_line(par->fd, &line))
 	{
-		cursor->pos = ft_strsplit(line, ' ');
-		chain_add(cursor);
-		cursor = cursor->next;
+		tab = ft_strsplit(line, ' ');
+		while (tab[i])
+		{
+			cur->pnt->x = i;
+			cur->pnt->y = y;
+			cur->pnt->z = ft_atoi(tab[i]);
+			tmp = chain_new();
+			cur->next = tmp;
+			cur = cur->next;
+			i++;
+		}
+		par->size_x = i;
+		i = 0;
+		y++;
 	}
-	return (chain);
+	par->size_y = i;
 }
