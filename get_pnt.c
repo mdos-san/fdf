@@ -6,11 +6,28 @@
 /*   By: mdos-san <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/18 15:07:28 by mdos-san          #+#    #+#             */
-/*   Updated: 2015/12/18 18:01:08 by mdos-san         ###   ########.fr       */
+/*   Updated: 2015/12/18 19:15:22 by mdos-san         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fdf.h"
+
+void	ajust(t_par *par)
+{
+	t_chain	*cur;
+
+	cur = par->chain;
+	while (cur->next)
+	{
+		cur->pnt->x = cur->pnt->x * (WIDTH / par->size_x);
+		cur->pnt->y = cur->pnt->y * (HEIGHT / par->size_y);
+		cur->pnt->x *= 0.9;
+		cur->pnt->y *= 0.9;
+		cur->pnt->x += 0.05 * WIDTH;
+		cur->pnt->y += 0.05 * HEIGHT;
+		cur = cur->next;
+	}
+}
 
 void	get_pnt(t_par *par)
 {
@@ -34,7 +51,7 @@ void	get_pnt(t_par *par)
 		{
 			cur->pnt->x = i;
 			cur->pnt->y = y;
-			cur->pnt->z = ft_atoi(tab[i]);
+			cur->pnt->z = ft_atoi(tab[i]) * 10;
 			tmp = chain_new();
 			cur->next = tmp;
 			cur = cur->next;
@@ -44,5 +61,6 @@ void	get_pnt(t_par *par)
 		i = 0;
 		y++;
 	}
-	par->size_y = i;
+	par->size_y = y;
+	ajust(par);
 }
