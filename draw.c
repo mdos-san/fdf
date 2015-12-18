@@ -39,8 +39,10 @@ void	draw(t_par *par)
 		{
 			tmp.x = pnt.x + par->vz->x * chain->tab[i] / (LEN / 2);
 			tmp.y = pnt.y + par->vz->y * chain->tab[i] / (LEN / 2);
-			if (chain->tab[i] != 0)
+			if (chain->tab[i] > 0)
 				img_put_pixel(par, tmp, GREEN);
+			else if (chain->tab[i] < 0)
+				img_put_pixel(par, tmp, RED);
 			else
 				img_put_pixel(par, tmp, WHITE);
 			translate_pnt(&pnt, *par->vx);
