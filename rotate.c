@@ -23,7 +23,7 @@ void	rotate_x(t_pnt *pnt, double angle)
 	y = pnt->y;
 	z = pnt->z;
 	pnt->y = y * cos(angle) - z * sin(angle);
-	pnt->z = y * sin(angle) - z * cos(angle);
+	pnt->z = z * cos(angle) + y * sin(angle);
 	pnt->y += HEIGHT / 2;
 }
 

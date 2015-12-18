@@ -16,8 +16,8 @@ int	loop_hook(t_par *par)
 {
 	img_clear(par);
 	draw(par);
-	par->angle_x += 1;
-	par->angle_z += 1;
+	par->angle_x = 3;
+	par->angle_z = 3;
 	mlx_put_image_to_window(par->mlx, par->win, par->img, 0, 0);
 	return (1);
 }

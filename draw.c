@@ -22,12 +22,12 @@ void	draw(t_par *par)
 	while (cur->next)
 	{
 		pnt_init(&tmp, cur->pnt->x, cur->pnt->y, cur->pnt->z);
-		rotate_x(&tmp, par->angle_x);
-		rotate_z(&tmp, par->angle_z);
+		rotate_x(cur->pnt, par->angle_x);
+		rotate_z(cur->pnt, par->angle_z);
 		if (cur->pnt->z > 0)
-			img_put_pixel(par, tmp, RED);
+			img_put_pixel(par, *cur->pnt, RED);
 		else
-			img_put_pixel(par, tmp, GREEN);
+			img_put_pixel(par, *cur->pnt, GREEN);
 		cur = cur->next;
 	}
 }
