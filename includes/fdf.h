@@ -51,6 +51,7 @@ typedef struct		s_par
 	int		size_x;
 	int		size_y;
 	double	angle_x;
+	double	angle_y;
 	double	angle_z;
 	void	*mlx;
 	void	*win;
@@ -73,6 +74,7 @@ void	pnt_init(t_pnt *pnt, double x, double y, double z);
 void	draw(t_par *par);
 void	get_pnt(t_par *par);
 void	rotate_x(t_pnt *pnt, double angle);
+void	rotate_y(t_pnt *pnt, double angle);
 void	rotate_z(t_pnt *pnt, double angle);
 
 #endif

@@ -27,6 +27,21 @@ void	rotate_x(t_pnt *pnt, double angle)
 	pnt->y += HEIGHT / 2;
 }
 
+void	rotate_y(t_pnt *pnt, double angle)
+{
+	double	x;
+	double	z;
+
+	angle = angle * M_PI / 180;
+
+	pnt->x -= WIDTH / 2;
+	x = pnt->x;
+	z = pnt->z;
+	pnt->x = x * cos(angle) - z * sin(angle);
+	pnt->z = z * cos(angle) + x * sin(angle);
+	pnt->x += WIDTH / 2;
+}
+
 void	rotate_z(t_pnt *pnt, double angle)
 {
 	double	x;

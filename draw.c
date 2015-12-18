@@ -15,14 +15,13 @@
 
 void	draw(t_par *par)
 {
-	t_chain	*cur;
-	t_pnt	tmp;
+	t_chain		*cur;
 
 	cur = par->chain;
 	while (cur->next)
 	{
-		pnt_init(&tmp, cur->pnt->x, cur->pnt->y, cur->pnt->z);
 		rotate_x(cur->pnt, par->angle_x);
+		rotate_y(cur->pnt, par->angle_y);
 		rotate_z(cur->pnt, par->angle_z);
 		img_put_pixel(par, *cur->pnt, WHITE);
 		cur = cur->next;
