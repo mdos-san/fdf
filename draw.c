@@ -24,10 +24,7 @@ void	draw(t_par *par)
 		pnt_init(&tmp, cur->pnt->x, cur->pnt->y, cur->pnt->z);
 		rotate_x(cur->pnt, par->angle_x);
 		rotate_z(cur->pnt, par->angle_z);
-		if (cur->pnt->z > 0)
-			img_put_pixel(par, *cur->pnt, RED);
-		else
-			img_put_pixel(par, *cur->pnt, GREEN);
+		img_put_pixel(par, *cur->pnt, WHITE);
 		cur = cur->next;
 	}
 }
