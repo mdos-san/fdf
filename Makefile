@@ -6,7 +6,7 @@
 #    By: mdos-san <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2015/12/18 17:35:31 by mdos-san          #+#    #+#              #
-#    Updated: 2015/12/18 17:49:55 by mdos-san         ###   ########.fr        #
+#    Updated: 2015/12/18 18:08:32 by mdos-san         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,7 +23,6 @@ SRC_C=\
 			start_rendering.c\
 			img_put_pixel.c\
 			img_clear.c\
-			vec_init.c\
 			pnt_init.c\
 			pnt_new.c\
 			draw.c\

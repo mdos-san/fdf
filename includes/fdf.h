@@ -6,7 +6,7 @@
 /*   By: mdos-san <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/12 09:24:25 by mdos-san          #+#    #+#             */
-/*   Updated: 2015/12/18 17:55:50 by mdos-san         ###   ########.fr       */
+/*   Updated: 2015/12/18 18:08:32 by mdos-san         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,7 +67,6 @@ t_chain	*chain_new(void);
 void	start_rendering(t_par *par);
 void	img_put_pixel(t_par *par, t_pnt pnt, int color);
 void	img_clear(t_par *par);
-t_vec	*vec_init(double x, double y, double z);
 t_pnt	*pnt_new(double x, double y, double z);
 void	pnt_init(t_pnt *pnt, double x, double y, double z);
 void	draw(t_par *par);
