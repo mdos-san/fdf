@@ -51,7 +51,7 @@ void	get_pnt(t_par *par)
 		{
 			cur->pnt->x = i;
 			cur->pnt->y = y;
-			cur->pnt->z = ft_atoi(tab[i]);
+			cur->pnt->z = ft_atoi(tab[i]) * (WIDTH / HEIGHT);
 			tmp = chain_new();
 			cur->next = tmp;
 			cur = cur->next;

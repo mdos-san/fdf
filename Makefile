@@ -22,6 +22,7 @@ SRC_C=\
 			chain_new.c\
 			start_rendering.c\
 			img_put_pixel.c\
+			img_putline.c\
 			img_clear.c\
 			pnt_init.c\
 			pnt_new.c\

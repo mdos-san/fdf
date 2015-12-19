@@ -16,8 +16,8 @@
 # include <mlx.h>
 # include <stdlib.h>
 # include <math.h>
-# define WIDTH 800
-# define HEIGHT 600
+# define WIDTH 640
+# define HEIGHT 480
 # define WHITE 0xFFFFFF
 # define RED 0xFF0000
 # define GREEN 0x00FF00
@@ -60,7 +60,7 @@ typedef struct		s_par
 	int		bpp;
 	int		sl;
 	int		ed;
-	t_pnt	*o;
+	t_pnt	o;
 	t_pnt	**pnt;
 	int		nb_pnt;
 }					t_par;
@@ -76,5 +76,6 @@ void	get_pnt(t_par *par);
 void	rotate_x(t_pnt *pnt, double angle);
 void	rotate_y(t_pnt *pnt, double angle);
 void	rotate_z(t_pnt *pnt, double angle);
+void	img_putline(t_par *par, t_pnt a, t_pnt b);
 
 #endif
