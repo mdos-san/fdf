@@ -6,7 +6,7 @@
 /*   By: mdos-san <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/14 15:39:19 by mdos-san          #+#    #+#             */
-/*   Updated: 2015/12/18 18:03:18 by mdos-san         ###   ########.fr       */
+/*   Updated: 2015/12/21 08:03:46 by mdos-san         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,8 @@ int	main(int ac, char **av)
 	if (ac != 2)
 		return (0);
 	par = (t_par*)malloc(sizeof(t_par));
-	par->fd = open(av[1], O_RDONLY);
+	par->coef = 1;
+	par->file = av[1];
 	get_pnt(par);
 	start_rendering(par);
 	return (0);

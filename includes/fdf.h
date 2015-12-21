@@ -6,7 +6,7 @@
 /*   By: mdos-san <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/12 09:24:25 by mdos-san          #+#    #+#             */
-/*   Updated: 2015/12/18 19:01:03 by mdos-san         ###   ########.fr       */
+/*   Updated: 2015/12/21 08:17:06 by mdos-san         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,12 @@
 # include <mlx.h>
 # include <stdlib.h>
 # include <math.h>
-# define WIDTH 640
-# define HEIGHT 480
+# include <sys/types.h>
+# include <sys/stat.h>
+# include <fcntl.h>
+# include <unistd.h>
+# define WIDTH 1900
+# define HEIGHT 1080
 # define WHITE 0xFFFFFF
 # define RED 0xFF0000
 # define GREEN 0x00FF00
@@ -47,6 +51,7 @@ typedef struct		s_chain
 typedef struct		s_par
 {
 	int		fd;
+	char	*file;
 	t_chain	*chain;
 	int		size_x;
 	int		size_y;
@@ -63,6 +68,7 @@ typedef struct		s_par
 	t_pnt	o;
 	t_pnt	**pnt;
 	int		nb_pnt;
+	int		coef;
 }					t_par;
 
 t_chain	*chain_new(void);
