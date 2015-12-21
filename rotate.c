@@ -6,7 +6,7 @@
 /*   By: mdos-san <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/18 18:32:07 by mdos-san          #+#    #+#             */
-/*   Updated: 2015/12/18 19:10:50 by mdos-san         ###   ########.fr       */
+/*   Updated: 2015/12/21 11:00:34 by mdos-san         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,6 @@ void	rotate_x(t_pnt *pnt, double angle)
 	double	z;
 
 	angle = angle * M_PI / 180;
-
 	pnt->y -= HEIGHT / 2;
 	y = pnt->y;
 	z = pnt->z;
@@ -33,7 +32,6 @@ void	rotate_y(t_pnt *pnt, double angle)
 	double	z;
 
 	angle = angle * M_PI / 180;
-
 	pnt->x -= WIDTH / 2;
 	x = pnt->x;
 	z = pnt->z;
@@ -48,7 +46,6 @@ void	rotate_z(t_pnt *pnt, double angle)
 	double	y;
 
 	angle = angle * M_PI / 180;
-
 	pnt->x -= WIDTH / 2;
 	pnt->y -= HEIGHT / 2;
 	x = pnt->x;

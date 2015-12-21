@@ -6,7 +6,7 @@
 /*   By: mdos-san <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/16 16:25:03 by mdos-san          #+#    #+#             */
-/*   Updated: 2015/12/21 09:55:22 by mdos-san         ###   ########.fr       */
+/*   Updated: 2015/12/21 11:01:35 by mdos-san         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ int	key_hook(int keycode, t_par *par)
 	if (keycode == 53)
 	{
 		mlx_destroy_window(par->mlx, par->win);
-		exit (0);
+		exit(0);
 	}
 	if (keycode == 18)
 	{
@@ -116,7 +116,6 @@ int	loop_hook(t_par *par)
 	expose_hook(par);
 	return (1);
 }
-
 
 void	start_rendering(t_par *par)
 {
