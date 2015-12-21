@@ -6,7 +6,7 @@
 /*   By: mdos-san <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/16 16:25:03 by mdos-san          #+#    #+#             */
-/*   Updated: 2015/12/21 08:50:40 by mdos-san         ###   ########.fr       */
+/*   Updated: 2015/12/21 09:55:22 by mdos-san         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 
 int	key_hook(int keycode, t_par *par)
 {
+	ft_putnbr(keycode);
+	ft_putchar('\n');
 	if (keycode == 53)
 	{
 		mlx_destroy_window(par->mlx, par->win);
@@ -70,6 +72,30 @@ int	key_hook(int keycode, t_par *par)
 			ft_putendl("Rotation sur l'axe z : [ON]");
 		else
 			ft_putendl("Rotation sur l'axe z : [OFF]");
+	}
+	if (keycode == 123)
+	{
+		move_position(par, -10, 0);
+		img_clear(par);
+		draw(par);
+	}
+	if (keycode == 124)
+	{
+		move_position(par, 10, 0);
+		img_clear(par);
+		draw(par);
+	}
+	if (keycode == 125)
+	{
+		move_position(par, 0, 10);
+		img_clear(par);
+		draw(par);
+	}
+	if (keycode == 126)
+	{
+		move_position(par, 0, -10);
+		img_clear(par);
+		draw(par);
 	}
 	return (1);
 }

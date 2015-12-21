@@ -6,7 +6,7 @@
 #    By: mdos-san <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2015/12/18 17:35:31 by mdos-san          #+#    #+#              #
-#    Updated: 2015/12/18 18:37:36 by mdos-san         ###   ########.fr        #
+#    Updated: 2015/12/21 09:51:26 by mdos-san         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -29,6 +29,7 @@ SRC_C=\
 			draw.c\
 			get_pnt.c\
 			rotate.c\
+			move_position.c\
 			main.c
 
 SRC_O=$(SRC_C:.c=.o)

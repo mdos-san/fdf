@@ -6,7 +6,7 @@
 /*   By: mdos-san <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/18 15:07:28 by mdos-san          #+#    #+#             */
-/*   Updated: 2015/12/21 08:35:53 by mdos-san         ###   ########.fr       */
+/*   Updated: 2015/12/21 09:28:35 by mdos-san         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,10 +21,10 @@ void	ajust(t_par *par)
 	{
 		cur->pnt->x = cur->pnt->x * (WIDTH / par->size_x);
 		cur->pnt->y = cur->pnt->y * (HEIGHT / par->size_y);
-//		cur->pnt->x *= 0.9;
-//		cur->pnt->y *= 0.9;
-//		cur->pnt->x += 0.05 * WIDTH;
-//		cur->pnt->y += 0.05 * HEIGHT;
+		cur->pnt->x *= 0.9;
+		cur->pnt->y *= 0.9;
+		cur->pnt->x += 0.05 * WIDTH;
+		cur->pnt->y += 0.05 * HEIGHT;
 		cur = cur->next;
 	}
 }

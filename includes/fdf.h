@@ -6,7 +6,7 @@
 /*   By: mdos-san <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/12 09:24:25 by mdos-san          #+#    #+#             */
-/*   Updated: 2015/12/21 08:17:06 by mdos-san         ###   ########.fr       */
+/*   Updated: 2015/12/21 09:48:30 by mdos-san         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,5 +83,6 @@ void	rotate_x(t_pnt *pnt, double angle);
 void	rotate_y(t_pnt *pnt, double angle);
 void	rotate_z(t_pnt *pnt, double angle);
 void	img_putline(t_par *par, t_pnt a, t_pnt b);
+void	move_position(t_par *par, int x, int y);
 
 #endif
