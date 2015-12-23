@@ -6,7 +6,7 @@
 /*   By: mdos-san <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/21 10:58:21 by mdos-san          #+#    #+#             */
-/*   Updated: 2015/12/21 16:26:46 by mdos-san         ###   ########.fr       */
+/*   Updated: 2015/12/23 18:07:04 by mdos-san         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@ void	img_putline(t_par *par, t_pnt a, t_pnt b)
 	double	coef;
 	double	p;
 
+	par->color = (unsigned int*)malloc(sizeof(unsigned int));
 	*((unsigned char*)(par->color) + 0) = 255; //BLU
 	*((unsigned char*)(par->color) + 1) = 255;//vert
 	*((unsigned char*)(par->color) + 2) = 100;//ROUGE
