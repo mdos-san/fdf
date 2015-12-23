@@ -6,7 +6,7 @@
 #    By: mdos-san <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2015/12/18 17:35:31 by mdos-san          #+#    #+#              #
-#    Updated: 2015/12/23 18:07:46 by mdos-san         ###   ########.fr        #
+#    Updated: 2015/12/23 18:51:57 by mdos-san         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -30,6 +30,10 @@ SRC_C=\
 			get_pnt.c\
 			rotate.c\
 			move_position.c\
+			color_new.c\
+			color_init.c\
+			color_add.c\
+			color_getgradient.c\
 			main.c
 
 SRC_O=$(SRC_C:.c=.o)
