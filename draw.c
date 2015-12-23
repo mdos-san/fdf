@@ -6,7 +6,7 @@
 /*   By: mdos-san <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/17 19:03:46 by mdos-san          #+#    #+#             */
-/*   Updated: 2015/12/18 19:06:49 by mdos-san         ###   ########.fr       */
+/*   Updated: 2015/12/23 19:38:57 by mdos-san         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,13 +23,14 @@ void	get_next_y(t_par *par, t_chain *chain)
 	pnt.x = cur->pnt->x;
 	pnt.y = cur->pnt->y;
 	pnt.z = cur->pnt->z;
+	pnt.color = cur->pnt->color;
 	cur = cur->next;
 	while (i < par->size_x - 1)
 	{
 		cur = cur->next;
 		i++;
 	}
-	img_putline(par, pnt, *cur->pnt);
+	img_putline(par, &pnt, cur->pnt);
 }
 
 void	draw_line(t_par *par)
@@ -46,7 +47,7 @@ void	draw_line(t_par *par)
 		if (y < par->size_y - 1)
 			get_next_y(par, cur);
 		if (x < par->size_x - 1)
-			img_putline(par, *cur->pnt, *cur->next->pnt);
+			img_putline(par, cur->pnt, cur->next->pnt);
 		x++;
 		if (x == par->size_x)
 		{
@@ -67,7 +68,7 @@ void	draw(t_par *par)
 		rotate_x(cur->pnt, par->angle_x);
 		rotate_y(cur->pnt, par->angle_y);
 		rotate_z(cur->pnt, par->angle_z);
-		img_put_pixel(par, *cur->pnt, RED);
+		img_put_pixel(par, *cur->pnt, *cur->pnt->color);
 		cur = cur->next;
 	}
 	draw_line(par);
