@@ -6,7 +6,7 @@
 /*   By: mdos-san <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/26 12:52:23 by mdos-san          #+#    #+#             */
-/*   Updated: 2015/12/03 13:43:20 by mdos-san         ###   ########.fr       */
+/*   Updated: 2015/12/23 18:12:28 by mdos-san         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,7 +60,7 @@ char		**ft_strsplit(char const *s, char c)
 	if (!s || !c)
 		return (NULL);
 	nb_word = check_nb_word(s, c);
-	tab_str = (char**)malloc(sizeof(char*) * nb_word + 1);
+	tab_str = (char**)malloc(sizeof(char*) * (nb_word + 1));
 	if (!tab_str)
 		return (NULL);
 	tab_str[nb_word] = 0;
