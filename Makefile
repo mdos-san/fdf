@@ -6,14 +6,14 @@
 #    By: mdos-san <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2015/12/18 17:35:31 by mdos-san          #+#    #+#              #
-#    Updated: 2015/12/21 09:51:26 by mdos-san         ###   ########.fr        #
+#    Updated: 2015/12/23 18:07:46 by mdos-san         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME=		fdf
 
 COMPILER=	gcc
-FLAGS=		-Werror -Wextra -Wall
+FLAGS=		-Werror -Wextra -Wall -g3 -fsanitize=address
 INCLUDES=	-I./includes
 LIBS2=		libft.a libmlx.a -lX11 -lXext -lm
 LIBS=		libft.a  -lmlx -framework OpenGL -framework AppKit -lm
