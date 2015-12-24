@@ -57,6 +57,7 @@ libmlx.a:
 	$(COMPILER) $(FLAGS) $(INCLUDES) -c $<
 
 ubuntu: $(SRC_O) $(SRC_C) libft.a includes/libft.h includes/fdf.h
+	cp ../libmlx.a .
 	$(COMPILER) $(FLAGS) $(INCLUDES) -o $(NAME) $(SRC_O) $(LIBS2)
 
 $(NAME): $(SRC_C) includes/fdf.h
