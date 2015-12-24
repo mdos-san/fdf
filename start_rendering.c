@@ -21,7 +21,7 @@ int	key_hook(int keycode, t_par *par)
 		mlx_destroy_window(par->mlx, par->win);
 		exit(0);
 	}
-	if (keycode == 18)
+	if (keycode == 18 || keycode == 49)
 	{
 		par->coef++;
 		get_pnt(par);
@@ -35,7 +35,7 @@ int	key_hook(int keycode, t_par *par)
 		par->angle_y = 0;
 		par->angle_z = 0;
 	}
-	if (keycode == 19)
+	if (keycode == 19 ||  keycode == 50)
 	{
 		par->coef--;
 		get_pnt(par);
@@ -49,7 +49,7 @@ int	key_hook(int keycode, t_par *par)
 		par->angle_y = 0;
 		par->angle_z = 0;
 	}
-	if (keycode == 7)
+	if (keycode == 7 || keycode == 120)
 	{
 		par->angle_x = (par->angle_x == 0) ? 1 : 0;
 		if (par->angle_x)
@@ -57,7 +57,7 @@ int	key_hook(int keycode, t_par *par)
 		else
 			ft_putendl("Rotation sur l'axe x : [OFF]");
 	}
-	if (keycode == 16)
+	if (keycode == 16 || keycode == 121)
 	{
 		par->angle_y = (par->angle_y == 0) ? 1 : 0;
 		if (par->angle_y)
@@ -65,7 +65,7 @@ int	key_hook(int keycode, t_par *par)
 		else
 			ft_putendl("Rotation sur l'axe y : [OFF]");
 	}
-	if (keycode == 6)
+	if (keycode == 6 || keycode == 122)
 	{
 		par->angle_z = (par->angle_z == 0) ? 1 : 0;
 		if (par->angle_z)

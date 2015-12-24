@@ -30,7 +30,7 @@ void	get_next_y(t_par *par, t_chain *chain)
 		cur = cur->next;
 		i++;
 	}
-	img_putline(par, &pnt, cur->pnt);
+	img_putline(par, pnt, *cur->pnt);
 }
 
 void	draw_line(t_par *par)
@@ -47,7 +47,7 @@ void	draw_line(t_par *par)
 		if (y < par->size_y - 1)
 			get_next_y(par, cur);
 		if (x < par->size_x - 1)
-			img_putline(par, cur->pnt, cur->next->pnt);
+			img_putline(par, *cur->pnt, *cur->next->pnt);
 		x++;
 		if (x == par->size_x)
 		{
