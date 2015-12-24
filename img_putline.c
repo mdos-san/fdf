@@ -21,7 +21,7 @@ void	img_putline(t_par *par, t_pnt a, t_pnt b)
 	{
 		while ((int)a.x != (int)b.x)
 		{
-			img_put_pixel(par, a, *a.color);
+			img_put_pixel(par, a, WHITE);
 			if (a.x < b.x)
 			{
 				a.y += coef;
@@ -39,7 +39,7 @@ void	img_putline(t_par *par, t_pnt a, t_pnt b)
 		coef = (b.x - a.x) / (b.y - a.y);
 		while ((int)a.y != (int)b.y)
 		{
-			img_put_pixel(par, a, *a.color);
+			img_put_pixel(par, a, WHITE);
 			if (a.y < b.y)
 			{
 				a.x += coef;
