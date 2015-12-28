@@ -6,7 +6,7 @@
 /*   By: mdos-san <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/28 15:25:18 by mdos-san          #+#    #+#             */
-/*   Updated: 2015/12/28 16:38:19 by mdos-san         ###   ########.fr       */
+/*   Updated: 2015/12/28 17:08:17 by mdos-san         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,14 +28,13 @@ int		key_pr(int keycode, t_par *par)
 		par->angle_z = 1;
 	if (keycode == 69)
 		par->coef_add = 1;
+	if (keycode == 78)
+		par->coef_add = -1;
 	return (1);
 }
 
 int		key_rl(int keycode, t_par *par)
 {
-	ft_putnbr(keycode);
-	ft_putchar('\n');
-
 	if (keycode == 0)
 		par->angle_y = 0;
 	if (keycode == 2)
@@ -49,6 +48,8 @@ int		key_rl(int keycode, t_par *par)
 	if (keycode == 14)
 		par->angle_z = 0;
 	if (keycode == 69)
+		par->coef_add = 0;
+	if (keycode == 78)
 		par->coef_add = 0;
 	if (keycode == 53)
 		exit (0);

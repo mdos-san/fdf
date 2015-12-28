@@ -6,7 +6,7 @@
 /*   By: mdos-san <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/16 16:25:03 by mdos-san          #+#    #+#             */
-/*   Updated: 2015/12/28 16:37:27 by mdos-san         ###   ########.fr       */
+/*   Updated: 2015/12/28 16:50:38 by mdos-san         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,14 @@
 
 int	loop_hook(t_par *par)
 {
-	if (par->coef_add)
+	if (par->coef_add == 1)
 	{
 		par->coef += 0.1;
+		get_pnt(par, par->color1, par->color2);
+	}
+	if (par->coef_add == -1)
+	{
+		par->coef -= 0.1;
 		get_pnt(par, par->color1, par->color2);
 	}
 	expose_hook(par);
@@ -32,7 +37,7 @@ void	start_rendering(t_par *par)
 	par->angle_y = 0;
 	par->angle_z = 0;
 	par->color1 = BLUE;
-	par->color2 = WHITE;
+	par->color2 = GREEN;
 	par->coef = 1;
 	par->coef_add = 0;
 	img_clear(par);
