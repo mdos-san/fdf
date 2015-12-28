@@ -6,7 +6,7 @@
 #    By: mdos-san <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2015/12/18 17:35:31 by mdos-san          #+#    #+#              #
-#    Updated: 2015/12/28 12:40:21 by mdos-san         ###   ########.fr        #
+#    Updated: 2015/12/28 12:58:11 by mdos-san         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -30,6 +30,7 @@ SRC_C=\
 			pnt_new.c\
 			draw.c\
 			get_pnt.c\
+			get_pnt_color.c\
 			rotate.c\
 			move_position.c\
 			grad_new.c\

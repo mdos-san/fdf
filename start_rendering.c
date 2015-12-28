@@ -6,7 +6,7 @@
 /*   By: mdos-san <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/16 16:25:03 by mdos-san          #+#    #+#             */
-/*   Updated: 2015/12/28 12:26:37 by mdos-san         ###   ########.fr       */
+/*   Updated: 2015/12/28 13:11:59 by mdos-san         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ int	key_hook(int keycode, t_par *par)
 	if (keycode == 18 || keycode == 49)
 	{
 		par->coef++;
-		get_pnt(par);
+		get_pnt(par, BLUE, RED);
 		par->angle_x = 45;
 		par->angle_y = 0;
 		par->angle_z = 45;
@@ -38,7 +38,7 @@ int	key_hook(int keycode, t_par *par)
 	if (keycode == 19 ||  keycode == 50)
 	{
 		par->coef--;
-		get_pnt(par);
+		get_pnt(par, BLUE, RED);
 		par->angle_x = 45;
 		par->angle_y = 0;
 		par->angle_z = 45;
@@ -108,16 +108,10 @@ int	expose_hook(t_par *par)
 
 int	loop_hook(t_par *par)
 {
-	t_pnt	*a;
-	t_pnt	*b;
-
-	a = pnt_new(WIDTH / 2, HEIGHT / 2, 0, GREEN);
-	b = pnt_new(a->x + 100, a->y, 0, RED);
 	if (par->angle_x != 0 || par->angle_y != 0 || par->angle_z != 0)
 	{
 		img_clear(par);
-//		draw(par);
-		img_putline(par, *a, *b);
+		draw(par);
 	}
 	expose_hook(par);
 	return (1);
@@ -128,15 +122,16 @@ void	start_rendering(t_par *par)
 	par->mlx = mlx_init();
 	par->win = mlx_new_window(par->mlx, WIDTH, HEIGHT, "mdos-san's fdf");
 	par->img = NULL;
-//	par->angle_x = 45;
-//	par->angle_y = 0;
-//	par->angle_z = 45;
-//	par->img = 0;
-//	img_clear(par);
-//	draw(par);
-//	par->angle_x = 0;
-//	par->angle_y = 0;
-//	par->angle_z = 0;
+	par->angle_x = 45;
+	par->angle_y = 0;
+	par->angle_z = 45;
+	par->img = 0;
+	img_clear(par);
+	get_pnt(par, GREEN, BLUE);
+	draw(par);
+	par->angle_x = 0;
+	par->angle_y = 0;
+	par->angle_z = 0;
 	mlx_key_hook(par->win, key_hook, par);
 	mlx_expose_hook(par->win, expose_hook, par);
 	mlx_loop_hook(par->mlx, loop_hook, par);

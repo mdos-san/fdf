@@ -1,29 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   get_pnt_color.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mdos-san <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/12/14 15:39:19 by mdos-san          #+#    #+#             */
-/*   Updated: 2015/12/28 13:06:27 by mdos-san         ###   ########.fr       */
+/*   Created: 2015/12/28 12:43:50 by mdos-san          #+#    #+#             */
+/*   Updated: 2015/12/28 12:57:53 by mdos-san         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <sys/types.h>
-#include <sys/stat.h>
-#include <fcntl.h>
 #include "fdf.h"
 
-int	main(int ac, char **av)
+void	get_pnt_color(t_par *par, unsigned int color1, unsigned int color2)
 {
-	t_par	*par;
+	int		i;
+	int		min;
+	int		length;
+	t_grad	*grad;
+	t_chain	*cur;
 
-	if (ac != 2)
-		return (0);
-	par = (t_par*)malloc(sizeof(t_par));
-	par->coef = 1;
-	par->file = av[1];
-	start_rendering(par);
-	return (0);
+	cur = par->chain;
+	min = chain_min(cur);
+	i = min;
+	length = chain_max(cur) - chain_min(cur);
+	grad = get_grad(&color1, &color2, length);
+	while (cur->next)
+	{
+		while (i < cur->pnt->z)
+		{
+			grad_apply(cur->pnt, *grad);
+			++i;
+		}
+		i = min;
+		cur = cur->next;
+	}
 }

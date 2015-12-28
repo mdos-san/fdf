@@ -6,7 +6,7 @@
 /*   By: mdos-san <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/21 10:58:21 by mdos-san          #+#    #+#             */
-/*   Updated: 2015/12/28 12:26:14 by mdos-san         ###   ########.fr       */
+/*   Updated: 2015/12/28 13:01:04 by mdos-san         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ void	img_putline(t_par *par, t_pnt a, t_pnt b)
 		grad = get_grad(&a.color, &b.color, (b.y - a.y));
 		while ((int)a.y != (int)b.y)
 		{
-			img_put_pixel(par, a, WHITE);
+			img_put_pixel(par, a, a.color);
 			grad_apply(&a, *grad);
 			if (a.y < b.y)
 			{

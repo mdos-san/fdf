@@ -6,7 +6,7 @@
 /*   By: mdos-san <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/18 15:07:28 by mdos-san          #+#    #+#             */
-/*   Updated: 2015/12/28 12:42:20 by mdos-san         ###   ########.fr       */
+/*   Updated: 2015/12/28 13:09:23 by mdos-san         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ void	ajust(t_par *par)
 	}
 }
 
-void	get_pnt(t_par *par)
+void	get_pnt(t_par *par, unsigned int color1, unsigned int color2)
 {
 	char	*line;
 	char	**tab;
@@ -53,6 +53,7 @@ void	get_pnt(t_par *par)
 			cur->pnt->x = i;
 			cur->pnt->y = y;
 			cur->pnt->z = ft_atoi(tab[i]) * par->coef;
+			cur->pnt->color = color1;
 			tmp = chain_new();
 			cur->next = tmp;
 			cur = cur->next;
@@ -63,6 +64,7 @@ void	get_pnt(t_par *par)
 		y++;
 	}
 	par->size_y = y;
+	get_pnt_color(par, color1, color2);
 	ajust(par);
 	close(par->fd);
 }
