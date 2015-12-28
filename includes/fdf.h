@@ -6,7 +6,7 @@
 /*   By: mdos-san <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/12 09:24:25 by mdos-san          #+#    #+#             */
-/*   Updated: 2015/12/28 14:18:28 by mdos-san         ###   ########.fr       */
+/*   Updated: 2015/12/28 15:03:44 by mdos-san         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -103,6 +103,6 @@ void			color_init(unsigned int *color, int value);
 void	color_add(unsigned int *a, unsigned int *b);
 t_grad			*grad_new(double r, double g, double b);
 t_grad			*get_grad(unsigned int *color1, unsigned int *color2, int size);
-void			grad_apply(t_pnt *pnt, t_grad grad, int coef);
+void			grad_apply(t_pnt *pnt, t_grad grad, double coef);
 
 #endif
