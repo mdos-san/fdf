@@ -6,7 +6,7 @@
 /*   By: mdos-san <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/16 16:25:03 by mdos-san          #+#    #+#             */
-/*   Updated: 2015/12/21 11:01:35 by mdos-san         ###   ########.fr       */
+/*   Updated: 2015/12/28 10:58:18 by mdos-san         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -108,10 +108,20 @@ int	expose_hook(t_par *par)
 
 int	loop_hook(t_par *par)
 {
+	t_pnt	*a;
+	t_pnt	*b;
+
+	a->x = WIDTH / 2;
+	a->y = HEIGHT / 2;
+	*a->color = BLUE;
+	b->x = a->x + 100;
+	b->y = a->y;
+	*b->color = RED;
 	if (par->angle_x != 0 || par->angle_y != 0 || par->angle_z != 0)
 	{
 		img_clear(par);
-		draw(par);
+//		draw(par);
+		img_putline(par, *a, *b);
 	}
 	expose_hook(par);
 	return (1);
@@ -121,15 +131,15 @@ void	start_rendering(t_par *par)
 {
 	par->mlx = mlx_init();
 	par->win = mlx_new_window(par->mlx, WIDTH, HEIGHT, "mdos-san's fdf");
-	par->angle_x = 45;
-	par->angle_y = 0;
-	par->angle_z = 45;
-	par->img = 0;
+//	par->angle_x = 45;
+//	par->angle_y = 0;
+//	par->angle_z = 45;
+//	par->img = 0;
 	img_clear(par);
-	draw(par);
-	par->angle_x = 0;
-	par->angle_y = 0;
-	par->angle_z = 0;
+//	draw(par);
+//	par->angle_x = 0;
+//	par->angle_y = 0;
+//	par->angle_z = 0;
 	mlx_key_hook(par->win, key_hook, par);
 	mlx_expose_hook(par->win, expose_hook, par);
 	mlx_loop_hook(par->mlx, loop_hook, par);
