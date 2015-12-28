@@ -6,7 +6,7 @@
 /*   By: mdos-san <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/12 09:24:25 by mdos-san          #+#    #+#             */
-/*   Updated: 2015/12/28 13:06:38 by mdos-san         ###   ########.fr       */
+/*   Updated: 2015/12/28 13:53:22 by mdos-san         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,7 +74,8 @@ typedef struct		s_par
 	int		bpp;
 	int		sl;
 	int		ed;
-	t_pnt	o;
+	t_pnt	a;
+	t_pnt	b;
 	t_pnt	**pnt;
 	int		nb_pnt;
 	int		coef;

@@ -6,7 +6,7 @@
 /*   By: mdos-san <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/16 16:25:03 by mdos-san          #+#    #+#             */
-/*   Updated: 2015/12/28 13:11:59 by mdos-san         ###   ########.fr       */
+/*   Updated: 2015/12/28 14:07:22 by mdos-san         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -125,7 +125,6 @@ void	start_rendering(t_par *par)
 	par->angle_x = 45;
 	par->angle_y = 0;
 	par->angle_z = 45;
-	par->img = 0;
 	img_clear(par);
 	get_pnt(par, GREEN, BLUE);
 	draw(par);
