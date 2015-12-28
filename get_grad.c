@@ -6,7 +6,7 @@
 /*   By: mdos-san <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/28 11:55:36 by mdos-san          #+#    #+#             */
-/*   Updated: 2015/12/28 13:01:33 by mdos-san         ###   ########.fr       */
+/*   Updated: 2015/12/28 14:17:37 by mdos-san         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,14 @@
 
 t_grad	*get_grad(unsigned int *color1, unsigned int *color2, int size)
 {
-	int		r;
-	int		g;
-	int		b;
+	double		r;
+	double		g;
+	double		b;
 	t_grad	*grad;
 
-	b = (int)(*((unsigned char*)color2 + 0) - *((unsigned char*)color1 + 0));
-	g = (int)(*((unsigned char*)color2 + 1) - *((unsigned char*)color1 + 1));
-	r = (int)(*((unsigned char*)color2 + 2) - *((unsigned char*)color1 + 2));
+	b = (double)(*((unsigned char*)color2 + 0) - *((unsigned char*)color1 + 0));
+	g = (double)(*((unsigned char*)color2 + 1) - *((unsigned char*)color1 + 1));
+	r = (double)(*((unsigned char*)color2 + 2) - *((unsigned char*)color1 + 2));
 	if (size != 0)
 	{
 		b /= size;

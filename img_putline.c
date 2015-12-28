@@ -6,7 +6,7 @@
 /*   By: mdos-san <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/21 10:58:21 by mdos-san          #+#    #+#             */
-/*   Updated: 2015/12/28 14:07:46 by mdos-san         ###   ########.fr       */
+/*   Updated: 2015/12/28 14:19:25 by mdos-san         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ void	img_putline(t_par *par, t_pnt a, t_pnt b)
 		while ((int)a.x != (int)b.x)
 		{
 			img_put_pixel(par, a, a.color);
-			grad_apply(&a, *grad);
+			grad_apply(&a, *grad, 1);
 			if (a.x < b.x)
 			{
 				a.y += coef;
@@ -50,7 +50,7 @@ void	img_putline(t_par *par, t_pnt a, t_pnt b)
 		while ((int)a.y != (int)b.y)
 		{
 			img_put_pixel(par, a, a.color);
-			grad_apply(&a, *grad);
+			grad_apply(&a, *grad, 1);
 			if (a.y < b.y)
 			{
 				a.x += coef;

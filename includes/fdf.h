@@ -6,7 +6,7 @@
 /*   By: mdos-san <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/12 09:24:25 by mdos-san          #+#    #+#             */
-/*   Updated: 2015/12/28 13:53:22 by mdos-san         ###   ########.fr       */
+/*   Updated: 2015/12/28 14:18:28 by mdos-san         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,9 +39,9 @@ typedef struct		s_pnt
 
 typedef struct		s_grad
 {
-	int	r;
-	int	g;
-	int	b;
+	double	r;
+	double	g;
+	double	b;
 }					t_grad;
 
 typedef struct		s_vec
@@ -101,8 +101,8 @@ void	move_position(t_par *par, int x, int y);
 unsigned int	*color_new(void);
 void			color_init(unsigned int *color, int value);
 void	color_add(unsigned int *a, unsigned int *b);
-t_grad			*grad_new(int r, int g, int b);
+t_grad			*grad_new(double r, double g, double b);
 t_grad			*get_grad(unsigned int *color1, unsigned int *color2, int size);
-void			grad_apply(t_pnt *pnt, t_grad grad);
+void			grad_apply(t_pnt *pnt, t_grad grad, int coef);
 
 #endif
