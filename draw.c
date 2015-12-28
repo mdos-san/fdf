@@ -6,7 +6,7 @@
 /*   By: mdos-san <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/17 19:03:46 by mdos-san          #+#    #+#             */
-/*   Updated: 2015/12/27 14:57:09 by mdos-san         ###   ########.fr       */
+/*   Updated: 2015/12/28 11:52:05 by mdos-san         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,7 +68,6 @@ void	draw(t_par *par)
 		rotate_x(cur->pnt, par->angle_x);
 		rotate_y(cur->pnt, par->angle_y);
 		rotate_z(cur->pnt, par->angle_z);
-		img_put_pixel(par, *cur->pnt, *cur->pnt->color);
 		cur = cur->next;
 	}
 	draw_line(par);

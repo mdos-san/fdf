@@ -1,27 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   color_new.c                                        :+:      :+:    :+:   */
+/*   grad_new.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mdos-san <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/12/23 15:46:38 by mdos-san          #+#    #+#             */
-/*   Updated: 2015/12/23 16:00:30 by mdos-san         ###   ########.fr       */
+/*   Created: 2015/12/28 11:42:53 by mdos-san          #+#    #+#             */
+/*   Updated: 2015/12/28 11:46:07 by mdos-san         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fdf.h"
 
-unsigned int	*color_new(void)
+t_grad	*grad_new(int r, int g, int b)
 {
-	unsigned int	*new;
+	t_grad	*new;
 
-	new = (unsigned int*)malloc(sizeof(unsigned int));
-	if (new == 0)
-		exit(0);
-	*((unsigned char*)new + 0) = 0;
-	*((unsigned char*)new + 1) = 0;
-	*((unsigned char*)new + 2) = 0;
-	*((unsigned char*)new + 3) = 0;
+	if(!(new = (t_grad*)malloc(sizeof(t_grad))))
+		return (NULL);
+	new->r = r;
+	new->g = g;
+	new->b = b;
 	return (new);
 }

@@ -6,7 +6,7 @@
 /*   By: mdos-san <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/21 10:58:21 by mdos-san          #+#    #+#             */
-/*   Updated: 2015/12/23 19:49:28 by mdos-san         ###   ########.fr       */
+/*   Updated: 2015/12/28 11:59:15 by mdos-san         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,10 @@
 void	img_putline(t_par *par, t_pnt a, t_pnt b)
 {
 	double	coef;
+	t_grad	*grad;
 
 	coef = (b.y - a.y) / (b.x - a.x);
+	grad = get_grad(&a.color, &b.color, (b.x - a.x));
 	if (-1 <= coef && coef <= 1)
 	{
 		while ((int)a.x != (int)b.x)

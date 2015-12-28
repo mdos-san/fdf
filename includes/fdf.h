@@ -6,7 +6,7 @@
 /*   By: mdos-san <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/12 09:24:25 by mdos-san          #+#    #+#             */
-/*   Updated: 2015/12/28 11:38:43 by mdos-san         ###   ########.fr       */
+/*   Updated: 2015/12/28 11:55:07 by mdos-san         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,13 @@ typedef struct		s_pnt
 	double			z;
 	unsigned int	color;
 }					t_pnt;
+
+typedef struct		s_grad
+{
+	int	r;
+	int	g;
+	int	b;
+}					t_grad;
 
 typedef struct		s_vec
 {
@@ -89,6 +96,7 @@ void	move_position(t_par *par, int x, int y);
 unsigned int	*color_new(void);
 void			color_init(unsigned int *color, int value);
 void	color_add(unsigned int *a, unsigned int *b);
-unsigned int	*color_getgradient(unsigned int *color1, unsigned int *color2, int size);
+t_grad			*grad_new(int r, int g, int b);
+t_grad			*get_grad(unsigned int *color1, unsigned int *color2, int size);
 
 #endif
