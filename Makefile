@@ -6,7 +6,7 @@
 #    By: mdos-san <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2015/12/18 17:35:31 by mdos-san          #+#    #+#              #
-#    Updated: 2015/12/28 11:56:22 by mdos-san         ###   ########.fr        #
+#    Updated: 2015/12/28 12:22:44 by mdos-san         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -32,6 +32,7 @@ SRC_C=\
 			move_position.c\
 			grad_new.c\
 			get_grad.c\
+			grad_apply.c\
 			main.c
 
 SRC_O=$(SRC_C:.c=.o)

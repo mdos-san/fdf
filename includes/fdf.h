@@ -6,7 +6,7 @@
 /*   By: mdos-san <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/12 09:24:25 by mdos-san          #+#    #+#             */
-/*   Updated: 2015/12/28 11:55:07 by mdos-san         ###   ########.fr       */
+/*   Updated: 2015/12/28 12:22:19 by mdos-san         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@
 # include <unistd.h>
 # define WIDTH 800
 # define HEIGHT 600
+# define BLACK 0x000000
 # define WHITE 0xFFFFFF
 # define RED 0xFF0000
 # define GREEN 0x00FF00
@@ -98,5 +99,6 @@ void			color_init(unsigned int *color, int value);
 void	color_add(unsigned int *a, unsigned int *b);
 t_grad			*grad_new(int r, int g, int b);
 t_grad			*get_grad(unsigned int *color1, unsigned int *color2, int size);
+void			grad_apply(t_pnt *pnt, t_grad grad);
 
 #endif
