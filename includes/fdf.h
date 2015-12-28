@@ -6,7 +6,7 @@
 /*   By: mdos-san <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/12 09:24:25 by mdos-san          #+#    #+#             */
-/*   Updated: 2015/12/28 15:03:44 by mdos-san         ###   ########.fr       */
+/*   Updated: 2015/12/28 16:36:58 by mdos-san         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,10 @@
 # include <sys/stat.h>
 # include <fcntl.h>
 # include <unistd.h>
+# define KeyPress 2
+# define KeyPressMask (1L<<0)
+# define KeyRelease 3
+# define KeyReleaseMask (1L<<1)
 # define WIDTH 800
 # define HEIGHT 600
 # define BLACK 0x000000
@@ -57,6 +61,11 @@ typedef struct		s_chain
 	struct s_chain	*next;
 }					t_chain;
 
+typedef struct		s_even
+{
+	int	coef_add;
+}					t_even;
+
 typedef struct		s_par
 {
 	int		fd;
@@ -78,8 +87,10 @@ typedef struct		s_par
 	t_pnt	b;
 	t_pnt	**pnt;
 	int		nb_pnt;
-	int		coef;
-	unsigned int	*color;
+	double	coef;
+	unsigned int	color1;
+	unsigned int	color2;
+	int				coef_add;
 }					t_par;
 
 t_chain	*chain_new(void);
@@ -104,5 +115,8 @@ void	color_add(unsigned int *a, unsigned int *b);
 t_grad			*grad_new(double r, double g, double b);
 t_grad			*get_grad(unsigned int *color1, unsigned int *color2, int size);
 void			grad_apply(t_pnt *pnt, t_grad grad, double coef);
+void	key_event(t_par *par);
+void	expose_event(t_par *par);
+int		expose_hook(t_par *par);
 
 #endif
