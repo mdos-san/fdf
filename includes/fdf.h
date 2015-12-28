@@ -6,7 +6,7 @@
 /*   By: mdos-san <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/12 09:24:25 by mdos-san          #+#    #+#             */
-/*   Updated: 2015/12/23 19:36:38 by mdos-san         ###   ########.fr       */
+/*   Updated: 2015/12/28 11:38:43 by mdos-san         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ typedef struct		s_pnt
 	double			x;
 	double			y;
 	double			z;
-	unsigned int	*color;
+	unsigned int	color;
 }					t_pnt;
 
 typedef struct		s_vec
@@ -77,7 +77,7 @@ t_chain	*chain_new(void);
 void	start_rendering(t_par *par);
 void	img_put_pixel(t_par *par, t_pnt pnt, int color);
 void	img_clear(t_par *par);
-t_pnt	*pnt_new(double x, double y, double z);
+t_pnt	*pnt_new(double x, double y, double z, unsigned int color);
 void	pnt_init(t_pnt *pnt, double x, double y, double z);
 void	draw(t_par *par);
 void	get_pnt(t_par *par);
