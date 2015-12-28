@@ -6,7 +6,7 @@
 /*   By: mdos-san <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/18 15:07:28 by mdos-san          #+#    #+#             */
-/*   Updated: 2015/12/28 11:53:22 by mdos-san         ###   ########.fr       */
+/*   Updated: 2015/12/28 12:42:20 by mdos-san         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,6 @@ void	get_pnt(t_par *par)
 			cur->pnt->x = i;
 			cur->pnt->y = y;
 			cur->pnt->z = ft_atoi(tab[i]) * par->coef;
-			cur->pnt->color = 0;
 			tmp = chain_new();
 			cur->next = tmp;
 			cur = cur->next;

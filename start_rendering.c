@@ -6,7 +6,7 @@
 /*   By: mdos-san <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/16 16:25:03 by mdos-san          #+#    #+#             */
-/*   Updated: 2015/12/28 11:37:19 by mdos-san         ###   ########.fr       */
+/*   Updated: 2015/12/28 12:26:37 by mdos-san         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -111,7 +111,7 @@ int	loop_hook(t_par *par)
 	t_pnt	*a;
 	t_pnt	*b;
 
-	a = pnt_new(WIDTH / 2, HEIGHT / 2, 0, BLUE);
+	a = pnt_new(WIDTH / 2, HEIGHT / 2, 0, GREEN);
 	b = pnt_new(a->x + 100, a->y, 0, RED);
 	if (par->angle_x != 0 || par->angle_y != 0 || par->angle_z != 0)
 	{

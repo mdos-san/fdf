@@ -6,7 +6,7 @@
 #    By: mdos-san <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2015/12/18 17:35:31 by mdos-san          #+#    #+#              #
-#    Updated: 2015/12/28 12:22:44 by mdos-san         ###   ########.fr        #
+#    Updated: 2015/12/28 12:40:21 by mdos-san         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,6 +20,8 @@ LIBS=		libft.a  -lmlx -framework OpenGL -framework AppKit -lm
 
 SRC_C=\
 			chain_new.c\
+			chain_min.c\
+			chain_max.c\
 			start_rendering.c\
 			img_put_pixel.c\
 			img_putline.c\

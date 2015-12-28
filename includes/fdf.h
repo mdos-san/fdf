@@ -6,7 +6,7 @@
 /*   By: mdos-san <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/12 09:24:25 by mdos-san          #+#    #+#             */
-/*   Updated: 2015/12/28 12:22:19 by mdos-san         ###   ########.fr       */
+/*   Updated: 2015/12/28 12:36:42 by mdos-san         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,6 +82,8 @@ typedef struct		s_par
 }					t_par;
 
 t_chain	*chain_new(void);
+int		chain_max(t_chain *chain);
+int		chain_min(t_chain *chain);
 void	start_rendering(t_par *par);
 void	img_put_pixel(t_par *par, t_pnt pnt, int color);
 void	img_clear(t_par *par);
