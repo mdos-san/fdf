@@ -94,6 +94,7 @@ typedef struct		s_par
 	t_vec			*vx;
 	t_vec			*vy;
 	t_vec			*vz;
+	char			event_change_color;
 	char			event_zoom;
 	char			event_height;
 }					t_par;
@@ -131,5 +132,9 @@ void	vec_rotate_x(t_vec *vec, double angle);
 void	vec_rotate_y(t_vec *vec, double angle);
 void	vec_rotate_z(t_vec *vec, double angle);
 void	vec_multiply(t_vec *vec, double coef);
+void	vec_add(t_vec *vec, double valeur);
+void	repere_rotate_x(t_vec *v1, t_vec *v2, t_vec *v3, double angle);
+void	repere_rotate_y(t_vec *v1, t_vec *v2, t_vec *v3, double angle);
+void	repere_rotate_z(t_vec *v1, t_vec *v2, t_vec *v3, double angle);
 
 #endif

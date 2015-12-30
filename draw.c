@@ -18,15 +18,9 @@ void	draw(t_par *par)
 	t_pnt		tmp;
 
 	cur = par->chain;
-	vec_rotate_x(par->vx, par->angle_x);
-	vec_rotate_x(par->vy, par->angle_x);
-	vec_rotate_x(par->vz, par->angle_x);
-	vec_rotate_y(par->vx, par->angle_y);
-	vec_rotate_y(par->vy, par->angle_y);
-	vec_rotate_y(par->vz, par->angle_y);
-	vec_rotate_z(par->vx, par->angle_z);
-	vec_rotate_z(par->vy, par->angle_z);
-	vec_rotate_z(par->vz, par->angle_z);
+	repere_rotate_x(par->vx, par->vy, par->vz, par->angle_x);
+	repere_rotate_y(par->vx, par->vy, par->vz, par->angle_y);
+	repere_rotate_z(par->vx, par->vy, par->vz, par->angle_z);
 	while (cur->next)
 	{
 		tmp.x = cur->pnt->x;
@@ -37,7 +31,7 @@ void	draw(t_par *par)
 		pnt_translate(&tmp, *par->vz, fabs(cur->pnt->z), (cur->pnt->z > 0) ? 0 : 1);
 		tmp.x += WIDTH / 2;
 		tmp.y += HEIGHT / 2;
-		img_put_pixel(par, tmp, WHITE);
+		img_put_pixel(par, tmp, cur->pnt->color);
 		cur = cur->next;
 	}
 	vec_draw(par, par->vx, BLUE);

@@ -44,6 +44,8 @@ SRC_C=\
 			vec_rotate.c\
 			vec_draw.c\
 			vec_multiply.c\
+			vec_add.c\
+			repere_rotate.c\
 			main.c
 
 SRC_O=$(SRC_C:.c=.o)

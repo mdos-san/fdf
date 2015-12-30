@@ -15,21 +15,17 @@
 int		key_pr(int keycode, t_par *par)
 {
 	if (keycode == 0 || keycode == 100)
-		par->angle_y = 1;
+		par->angle_y = 2;
 	if (keycode == 2 || keycode == 97)
-		par->angle_y = -1;
+		par->angle_y = -2;
 	if (keycode == 13 || keycode == 115)
-		par->angle_x = 1;
+		par->angle_x = 2;
 	if (keycode == 1 || keycode == 119)
-		par->angle_x = -1;
+		par->angle_x = -2;
 	if (keycode == 12 || keycode == 113)
-		par->angle_z = -1;
+		par->angle_z = -2;
 	if (keycode == 14 || keycode == 101)
-		par->angle_z = 1;
-	if (keycode == 69)
-		par->coef_add = 1;
-	if (keycode == 78)
-		par->coef_add = -1;
+		par->angle_z = 2;
 	if (keycode == 65470)
 		par->event_zoom = 1;
 	if (keycode == 65471)
