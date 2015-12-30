@@ -14,17 +14,17 @@
 
 int		key_pr(int keycode, t_par *par)
 {
-	if (keycode == 0)
+	if (keycode == 0 || keycode == 100)
 		par->angle_y = 1;
-	if (keycode == 2)
+	if (keycode == 2 || keycode == 97)
 		par->angle_y = -1;
-	if (keycode == 13)
+	if (keycode == 13 || keycode == 115)
 		par->angle_x = 1;
-	if (keycode == 1)
+	if (keycode == 1 || keycode == 119)
 		par->angle_x = -1;
-	if (keycode == 12)
+	if (keycode == 12 || keycode == 113)
 		par->angle_z = -1;
-	if (keycode == 14)
+	if (keycode == 14 || keycode == 101)
 		par->angle_z = 1;
 	if (keycode == 69)
 		par->coef_add = 1;
@@ -35,23 +35,25 @@ int		key_pr(int keycode, t_par *par)
 
 int		key_rl(int keycode, t_par *par)
 {
-	if (keycode == 0)
+	ft_putnbr(keycode);
+	ft_putchar('\n');
+	if (keycode == 0 || keycode == 100)
 		par->angle_y = 0;
-	if (keycode == 2)
+	if (keycode == 2 || keycode == 97)
 		par->angle_y = 0;
-	if (keycode == 13)
+	if (keycode == 13 || keycode == 115)
 		par->angle_x = 0;
-	if (keycode == 1)
+	if (keycode == 1 || keycode == 119)
 		par->angle_x = 0;
-	if (keycode == 12)
+	if (keycode == 12 || keycode == 113)
 		par->angle_z = 0;
-	if (keycode == 14)
+	if (keycode == 14 || keycode == 101)
 		par->angle_z = 0;
 	if (keycode == 69)
 		par->coef_add = 0;
 	if (keycode == 78)
 		par->coef_add = 0;
-	if (keycode == 53)
+	if (keycode == 53 || keycode == 65307)
 		exit (0);
 	return (1);
 }

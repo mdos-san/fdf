@@ -15,5 +15,5 @@
 void	vec_del(t_vec **a_vec)
 {
 	if (*a_vec)
-		free(*free);
+		free(*a_vec);
 }
