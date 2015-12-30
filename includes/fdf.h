@@ -6,7 +6,7 @@
 /*   By: mdos-san <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/12 09:24:25 by mdos-san          #+#    #+#             */
-/*   Updated: 2015/12/30 15:49:50 by mdos-san         ###   ########.fr       */
+/*   Updated: 2015/12/30 16:01:16 by mdos-san         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -91,6 +91,9 @@ typedef struct		s_par
 	unsigned int	color1;
 	unsigned int	color2;
 	int				coef_add;
+	t_vec			*vx;
+	t_vec			*vy;
+	t_vec			*vz;
 }					t_par;
 
 t_chain	*chain_new(void);

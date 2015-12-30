@@ -6,7 +6,7 @@
 /*   By: mdos-san <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/16 16:25:03 by mdos-san          #+#    #+#             */
-/*   Updated: 2015/12/28 16:50:38 by mdos-san         ###   ########.fr       */
+/*   Updated: 2015/12/30 16:10:57 by mdos-san         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,16 +36,18 @@ void	start_rendering(t_par *par)
 	par->angle_x = 0;
 	par->angle_y = 0;
 	par->angle_z = 0;
-	par->color1 = BLUE;
-	par->color2 = GREEN;
+	par->color1 = WHITE;
+	par->color2 = WHITE;
 	par->coef = 1;
 	par->coef_add = 0;
+	par->vx = vec_new(1, 0, 0);
+	par->vy = vec_new(0, 1, 0);
+	par->vz = vec_new(0, 0, 1);
 	img_clear(par);
 	get_pnt(par, par->color1, par->color2);
 	draw(par);
 	key_event(par);
 	expose_event(par);
-//	mlx_key_hook(par->win, key, 0);
 	mlx_loop_hook(par->mlx, loop_hook, par);
 	mlx_loop(par->mlx);
 }

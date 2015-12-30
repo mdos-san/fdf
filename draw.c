@@ -6,7 +6,7 @@
 /*   By: mdos-san <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/17 19:03:46 by mdos-san          #+#    #+#             */
-/*   Updated: 2015/12/28 11:52:05 by mdos-san         ###   ########.fr       */
+/*   Updated: 2015/12/30 16:06:15 by mdos-san         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,4 +71,16 @@ void	draw(t_par *par)
 		cur = cur->next;
 	}
 	draw_line(par);
+	vec_rotate_x(par->vx, par->angle_x);
+	vec_rotate_x(par->vy, par->angle_x);
+	vec_rotate_x(par->vz, par->angle_x);
+	vec_rotate_y(par->vx, par->angle_y);
+	vec_rotate_y(par->vy, par->angle_y);
+	vec_rotate_y(par->vz, par->angle_y);
+	vec_rotate_z(par->vx, par->angle_z);
+	vec_rotate_z(par->vy, par->angle_z);
+	vec_rotate_z(par->vz, par->angle_z);
+	vec_draw(par, par->vx, BLUE);
+	vec_draw(par, par->vy, GREEN);
+	vec_draw(par, par->vz, RED);
 }
