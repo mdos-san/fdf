@@ -6,7 +6,7 @@
 /*   By: mdos-san <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/12 09:24:25 by mdos-san          #+#    #+#             */
-/*   Updated: 2015/12/30 17:47:03 by mdos-san         ###   ########.fr       */
+/*   Updated: 2015/12/30 18:14:22 by mdos-san         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -104,7 +104,7 @@ void	img_put_pixel(t_par *par, t_pnt pnt, int color);
 void	img_clear(t_par *par);
 t_pnt	*pnt_new(double x, double y, double z, unsigned int color);
 void	pnt_init(t_pnt *pnt, double x, double y, double z);
-void	pnt_translate(t_pnt *pnt, t_vec vec, int nb);
+void	pnt_translate(t_pnt *pnt, t_vec vec, int nb, int neg);
 void	draw(t_par *par);
 void	get_pnt(t_par *par, unsigned int color1, unsigned int color2);
 void	get_pnt_color(t_par *par, unsigned int color1, unsigned int color2);

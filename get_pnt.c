@@ -6,7 +6,7 @@
 /*   By: mdos-san <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/18 15:07:28 by mdos-san          #+#    #+#             */
-/*   Updated: 2015/12/30 17:20:07 by mdos-san         ###   ########.fr       */
+/*   Updated: 2015/12/30 18:17:46 by mdos-san         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,8 @@ void	ajust(t_par *par)
 	cur = par->chain;
 	while (cur->next)
 	{
-		cur->pnt->x = cur->pnt->x ;
-		cur->pnt->y = cur->pnt->y ;
+		cur->pnt->x = cur->pnt->x - par->size_x / 2;
+		cur->pnt->y = cur->pnt->y - par->size_y / 2;
 		cur = cur->next;
 	}
 }

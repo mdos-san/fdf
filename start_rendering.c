@@ -6,7 +6,7 @@
 /*   By: mdos-san <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/16 16:25:03 by mdos-san          #+#    #+#             */
-/*   Updated: 2015/12/30 17:52:31 by mdos-san         ###   ########.fr       */
+/*   Updated: 2015/12/30 18:16:49 by mdos-san         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,14 +16,14 @@ int	loop_hook(t_par *par)
 {
 	if (par->coef_add == 1)
 	{
-//		vec_multiply(par->vx, 1.1);
-//		vec_multiply(par->vy, 1.1);
+		vec_multiply(par->vx, 1.1);
+		vec_multiply(par->vy, 1.1);
 		vec_multiply(par->vz, 1.1);
 	}
 	if (par->coef_add == -1)
 	{
-//		vec_multiply(par->vx, 0.9);
-//		vec_multiply(par->vy, 0.9);
+		vec_multiply(par->vx, 0.9);
+		vec_multiply(par->vy, 0.9);
 		vec_multiply(par->vz, 0.9);
 	}
 	expose_hook(par);

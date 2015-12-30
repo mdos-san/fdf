@@ -6,7 +6,7 @@
 /*   By: mdos-san <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/17 19:03:46 by mdos-san          #+#    #+#             */
-/*   Updated: 2015/12/30 17:48:59 by mdos-san         ###   ########.fr       */
+/*   Updated: 2015/12/30 18:18:36 by mdos-san         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,9 +32,9 @@ void	draw(t_par *par)
 		tmp.x = cur->pnt->x;
 		tmp.y = cur->pnt->y;
 		tmp.z = cur->pnt->z;
-		pnt_translate(&tmp, *par->vx, cur->pnt->x);
-		pnt_translate(&tmp, *par->vy, cur->pnt->y);
-		pnt_translate(&tmp, *par->vz, cur->pnt->z);
+		pnt_translate(&tmp, *par->vx, fabs(cur->pnt->x), (cur->pnt->x > 0) ? 0 : 1);
+		pnt_translate(&tmp, *par->vy, fabs(cur->pnt->y), (cur->pnt->y > 0) ? 0 : 1);
+		pnt_translate(&tmp, *par->vz, fabs(cur->pnt->z), (cur->pnt->z > 0) ? 0 : 1);
 		tmp.x += WIDTH / 2;
 		tmp.y += HEIGHT / 2;
 		img_put_pixel(par, tmp, WHITE);
