@@ -14,18 +14,22 @@
 
 int	loop_hook(t_par *par)
 {
-	if (par->coef_add == 1)
+	if (par->event_zoom == 1)
 	{
 		vec_multiply(par->vx, 1.1);
 		vec_multiply(par->vy, 1.1);
 		vec_multiply(par->vz, 1.1);
 	}
-	if (par->coef_add == -1)
+	if (par->event_zoom == -1)
 	{
 		vec_multiply(par->vx, 0.9);
 		vec_multiply(par->vy, 0.9);
 		vec_multiply(par->vz, 0.9);
 	}
+	if (par->event_height == 1)
+		vec_multiply(par->vz, 1.1);
+	if (par->event_height == -1)
+		vec_multiply(par->vz, 0.9);
 	expose_hook(par);
 	return (1);
 }

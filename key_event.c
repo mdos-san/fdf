@@ -30,6 +30,14 @@ int		key_pr(int keycode, t_par *par)
 		par->coef_add = 1;
 	if (keycode == 78)
 		par->coef_add = -1;
+	if (keycode == 65470)
+		par->event_zoom = 1;
+	if (keycode == 65471)
+		par->event_zoom = -1;
+	if (keycode == 65472)
+		par->event_height = 1;
+	if (keycode == 65473)
+		par->event_height = -1;
 	return (1);
 }
 
@@ -49,10 +57,14 @@ int		key_rl(int keycode, t_par *par)
 		par->angle_z = 0;
 	if (keycode == 14 || keycode == 101)
 		par->angle_z = 0;
-	if (keycode == 69)
-		par->coef_add = 0;
-	if (keycode == 78)
-		par->coef_add = 0;
+	if (keycode == 65470)
+		par->event_zoom = 0;
+	if (keycode == 65471)
+		par->event_zoom = 0;
+	if (keycode == 65472)
+		par->event_height = 0;
+	if (keycode == 65473)
+		par->event_height = 0;
 	if (keycode == 53 || keycode == 65307)
 		exit (0);
 	return (1);

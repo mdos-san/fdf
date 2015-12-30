@@ -94,6 +94,8 @@ typedef struct		s_par
 	t_vec			*vx;
 	t_vec			*vy;
 	t_vec			*vz;
+	char			event_zoom;
+	char			event_height;
 }					t_par;
 
 t_chain	*chain_new(void);
