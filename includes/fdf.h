@@ -6,7 +6,7 @@
 /*   By: mdos-san <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/12 09:24:25 by mdos-san          #+#    #+#             */
-/*   Updated: 2015/12/30 15:36:55 by mdos-san         ###   ########.fr       */
+/*   Updated: 2015/12/30 15:49:50 by mdos-san         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -121,5 +121,8 @@ int		expose_hook(t_par *par);
 t_vec	*vec_new(double x, double y, double z);
 void	vec_del(t_vec **a_vec);
 void	vec_draw(t_par *par, t_vec *vec, unsigned int color);
+void	vec_rotate_x(t_vec *vec, double angle);
+void	vec_rotate_y(t_vec *vec, double angle);
+void	vec_rotate_z(t_vec *vec, double angle);
 
 #endif

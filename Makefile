@@ -6,7 +6,7 @@
 #    By: mdos-san <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2015/12/18 17:35:31 by mdos-san          #+#    #+#              #
-#    Updated: 2015/12/30 15:36:10 by mdos-san         ###   ########.fr        #
+#    Updated: 2015/12/30 15:51:16 by mdos-san         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -40,6 +40,7 @@ SRC_C=\
 			expose_event.c\
 			vec_new.c\
 			vec_del.c\
+			vec_rotate.c\
 			vec_draw.c\
 			main.c
 
