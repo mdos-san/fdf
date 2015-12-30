@@ -6,71 +6,18 @@
 /*   By: mdos-san <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/17 19:03:46 by mdos-san          #+#    #+#             */
-/*   Updated: 2015/12/30 16:06:15 by mdos-san         ###   ########.fr       */
+/*   Updated: 2015/12/30 17:20:07 by mdos-san         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fdf.h"
 
-void	get_next_y(t_par *par, t_chain *chain)
-{
-	t_pnt	pnt;
-	t_chain	*cur;
-	int		i;
-
-	i = 0;
-	cur = chain;
-	pnt.x = cur->pnt->x;
-	pnt.y = cur->pnt->y;
-	pnt.z = cur->pnt->z;
-	pnt.color = cur->pnt->color;
-	cur = cur->next;
-	while (i < par->size_x - 1)
-	{
-		cur = cur->next;
-		i++;
-	}
-	img_putline(par, pnt, *cur->pnt);
-}
-
-void	draw_line(t_par *par)
-{
-	t_chain *cur;
-	int		x;
-	int		y;
-
-	x = 0;
-	y = 0;
-	cur = par->chain;
-	while (cur->next)
-	{
-		if (y < par->size_y - 1)
-			get_next_y(par, cur);
-		if (x < par->size_x - 1)
-			img_putline(par, *cur->pnt, *cur->next->pnt);
-		x++;
-		if (x == par->size_x)
-		{
-			y++;
-			x = 0;
-		}
-		cur = cur->next;
-	}
-}
-
 void	draw(t_par *par)
 {
 	t_chain		*cur;
+	t_pnt		tmp;
 
 	cur = par->chain;
-	while (cur->next)
-	{
-		rotate_x(cur->pnt, par->angle_x);
-		rotate_y(cur->pnt, par->angle_y);
-		rotate_z(cur->pnt, par->angle_z);
-		cur = cur->next;
-	}
-	draw_line(par);
 	vec_rotate_x(par->vx, par->angle_x);
 	vec_rotate_x(par->vy, par->angle_x);
 	vec_rotate_x(par->vz, par->angle_x);
@@ -80,6 +27,18 @@ void	draw(t_par *par)
 	vec_rotate_z(par->vx, par->angle_z);
 	vec_rotate_z(par->vy, par->angle_z);
 	vec_rotate_z(par->vz, par->angle_z);
+	while (cur->next)
+	{
+		tmp.x = cur->pnt->x;
+		tmp.y = cur->pnt->y;
+		tmp.z = cur->pnt->z;
+		pnt_translate(&tmp, *par->vx, cur->pnt->x);
+		pnt_translate(&tmp, *par->vy, cur->pnt->y);
+		pnt_translate(&tmp, *par->vz, cur->pnt->z);
+
+		img_put_pixel(par, tmp, WHITE);
+		cur = cur->next;
+	}
 	vec_draw(par, par->vx, BLUE);
 	vec_draw(par, par->vy, GREEN);
 	vec_draw(par, par->vz, RED);

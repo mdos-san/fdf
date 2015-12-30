@@ -6,7 +6,7 @@
 /*   By: mdos-san <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/18 15:07:28 by mdos-san          #+#    #+#             */
-/*   Updated: 2015/12/28 16:05:20 by mdos-san         ###   ########.fr       */
+/*   Updated: 2015/12/30 17:20:07 by mdos-san         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,8 @@ void	ajust(t_par *par)
 	cur = par->chain;
 	while (cur->next)
 	{
-		cur->pnt->x = cur->pnt->x * (WIDTH / (par->size_x - 1));
-		cur->pnt->y = cur->pnt->y * (HEIGHT / (par->size_y - 1));
+		cur->pnt->x = cur->pnt->x ;
+		cur->pnt->y = cur->pnt->y ;
 		cur = cur->next;
 	}
 }
@@ -48,7 +48,7 @@ void	get_pnt(t_par *par, unsigned int color1, unsigned int color2)
 		{
 			cur->pnt->x = i;
 			cur->pnt->y = y;
-			cur->pnt->z = ft_atoi(tab[i]) * par->coef;
+			cur->pnt->z = ft_atoi(tab[i]);
 			cur->pnt->color = color1;
 			tmp = chain_new();
 			cur->next = tmp;

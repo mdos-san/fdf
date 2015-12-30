@@ -6,7 +6,7 @@
 #    By: mdos-san <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2015/12/18 17:35:31 by mdos-san          #+#    #+#              #
-#    Updated: 2015/12/30 15:51:16 by mdos-san         ###   ########.fr        #
+#    Updated: 2015/12/30 17:12:56 by mdos-san         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -28,6 +28,7 @@ SRC_C=\
 			img_clear.c\
 			pnt_init.c\
 			pnt_new.c\
+			pnt_translate.c\
 			draw.c\
 			get_pnt.c\
 			get_pnt_color.c\
