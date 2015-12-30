@@ -6,7 +6,7 @@
 /*   By: mdos-san <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/17 19:03:46 by mdos-san          #+#    #+#             */
-/*   Updated: 2015/12/30 17:20:07 by mdos-san         ###   ########.fr       */
+/*   Updated: 2015/12/30 17:48:59 by mdos-san         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,8 @@ void	draw(t_par *par)
 		pnt_translate(&tmp, *par->vx, cur->pnt->x);
 		pnt_translate(&tmp, *par->vy, cur->pnt->y);
 		pnt_translate(&tmp, *par->vz, cur->pnt->z);
-
+		tmp.x += WIDTH / 2;
+		tmp.y += HEIGHT / 2;
 		img_put_pixel(par, tmp, WHITE);
 		cur = cur->next;
 	}

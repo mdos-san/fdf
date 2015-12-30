@@ -6,7 +6,7 @@
 /*   By: mdos-san <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/16 16:25:03 by mdos-san          #+#    #+#             */
-/*   Updated: 2015/12/30 17:17:39 by mdos-san         ###   ########.fr       */
+/*   Updated: 2015/12/30 17:52:31 by mdos-san         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,13 +16,15 @@ int	loop_hook(t_par *par)
 {
 	if (par->coef_add == 1)
 	{
-		par->coef += 0.1;
-		get_pnt(par, par->color1, par->color2);
+//		vec_multiply(par->vx, 1.1);
+//		vec_multiply(par->vy, 1.1);
+		vec_multiply(par->vz, 1.1);
 	}
 	if (par->coef_add == -1)
 	{
-		par->coef -= 0.1;
-		get_pnt(par, par->color1, par->color2);
+//		vec_multiply(par->vx, 0.9);
+//		vec_multiply(par->vy, 0.9);
+		vec_multiply(par->vz, 0.9);
 	}
 	expose_hook(par);
 	return (1);
@@ -40,9 +42,9 @@ void	start_rendering(t_par *par)
 	par->color2 = WHITE;
 	par->coef = 1;
 	par->coef_add = 0;
-	par->vx = vec_new(1, 0, 0);
-	par->vy = vec_new(0, 1, 0);
-	par->vz = vec_new(0, 0, 1);
+	par->vx = vec_new(10, 0, 0);
+	par->vy = vec_new(0, 10, 0);
+	par->vz = vec_new(0, 0, -10);
 	img_clear(par);
 	get_pnt(par, par->color1, par->color2);
 	draw(par);
