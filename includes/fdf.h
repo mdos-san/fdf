@@ -6,7 +6,7 @@
 /*   By: mdos-san <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/12 09:24:25 by mdos-san          #+#    #+#             */
-/*   Updated: 2015/12/28 16:36:58 by mdos-san         ###   ########.fr       */
+/*   Updated: 2015/12/30 15:36:55 by mdos-san         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -118,5 +118,8 @@ void			grad_apply(t_pnt *pnt, t_grad grad, double coef);
 void	key_event(t_par *par);
 void	expose_event(t_par *par);
 int		expose_hook(t_par *par);
+t_vec	*vec_new(double x, double y, double z);
+void	vec_del(t_vec **a_vec);
+void	vec_draw(t_par *par, t_vec *vec, unsigned int color);
 
 #endif
