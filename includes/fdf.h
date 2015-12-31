@@ -55,6 +55,15 @@ typedef struct		s_vec
 	double	z;
 }					t_vec;
 
+
+typedef struct		s_rep
+{
+	t_pnt	origin;
+	t_vec	vx;
+	t_vec	vy;
+	t_vec	vz;
+}					t_rep;
+
 typedef struct		s_chain
 {
 	t_pnt			*pnt;
@@ -127,14 +136,16 @@ void	expose_event(t_par *par);
 int		expose_hook(t_par *par);
 t_vec	*vec_new(double x, double y, double z);
 void	vec_del(t_vec **a_vec);
+t_vec	vec_get(double x, double y, double z);
 void	vec_draw(t_par *par, t_vec *vec, unsigned int color);
 void	vec_rotate_x(t_vec *vec, double angle);
 void	vec_rotate_y(t_vec *vec, double angle);
 void	vec_rotate_z(t_vec *vec, double angle);
 void	vec_multiply(t_vec *vec, double coef);
 void	vec_add(t_vec *vec, double valeur);
-void	repere_rotate_x(t_vec *v1, t_vec *v2, t_vec *v3, double angle);
-void	repere_rotate_y(t_vec *v1, t_vec *v2, t_vec *v3, double angle);
-void	repere_rotate_z(t_vec *v1, t_vec *v2, t_vec *v3, double angle);
+t_rep	*repere_new(t_vec vx, t_vec vy, t_vec vz, t_pnt origin);
+void	repere_rotate_x(t_rep *rep, double angle);
+void	repere_rotate_y(t_rep *rep, double angle);
+void	repere_rotate_z(t_rep *rep, double angle);
 
 #endif

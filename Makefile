@@ -41,10 +41,12 @@ SRC_C=\
 			expose_event.c\
 			vec_new.c\
 			vec_del.c\
+			vec_get.c\
 			vec_rotate.c\
 			vec_draw.c\
 			vec_multiply.c\
 			vec_add.c\
+			repere_new.c\
 			repere_rotate.c\
 			main.c
 

@@ -42,12 +42,12 @@ void	start_rendering(t_par *par)
 	par->angle_x = 0;
 	par->angle_y = 0;
 	par->angle_z = 0;
-	par->color1 = GREEN;
+	par->color1 = BLUE;
 	par->color2 = RED;
 	par->coef = 1;
 	par->vx = vec_new(1, 0, 0);
 	par->vy = vec_new(0, 1, 0);
-	par->vz = vec_new(0, 0, -1);
+	par->vz = vec_new(0, 0, 1);
 	img_clear(par);
 	get_pnt(par, par->color1, par->color2);
 	draw(par);
