@@ -19,8 +19,8 @@ void	ajust(t_par *par)
 	cur = par->chain;
 	while (cur->next)
 	{
-		cur->pnt->x = cur->pnt->x - par->size_x / 2;
-		cur->pnt->y = cur->pnt->y - par->size_y / 2;
+		cur->pnt->x -= par->size_x / 2;
+		cur->pnt->y -= par->size_y / 2;
 		cur = cur->next;
 	}
 }

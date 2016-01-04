@@ -15,21 +15,13 @@
 void	img_putline(t_par *par, t_pnt a, t_pnt b)
 {
 	double	coef;
-	t_pnt	tmp;
-	t_grad	*grad;
 
 	coef = (b.y - a.y) / (b.x - a.x);
-	tmp.x = a.x;
-	tmp.y = a.y;
-	tmp.color = a.color;
 	if (-1 <= coef && coef <= 1)
 	{
-		grad = get_grad(&b.color, &a.color, (b.x - a.x));
 		while ((int)a.x != (int)b.x)
 		{
 			img_put_pixel(par, a, a.color);
-			a.color = tmp.color;
-			grad_apply(&a, *grad, b.x - a.x);
 			if (a.x < b.x)
 			{
 				a.y += coef;
@@ -45,12 +37,9 @@ void	img_putline(t_par *par, t_pnt a, t_pnt b)
 	else
 	{
 		coef = (b.x - a.x) / (b.y - a.y);
-		grad = get_grad(&b.color, &a.color, (b.y - a.y));
 		while ((int)a.y != (int)b.y)
 		{
 			img_put_pixel(par, a, a.color);
-			a.color = tmp.color;
-			grad_apply(&a, *grad, b.y - a.y);
 			if (a.y < b.y)
 			{
 				a.x += coef;

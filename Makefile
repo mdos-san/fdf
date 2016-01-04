@@ -22,6 +22,7 @@ SRC_C=\
 			chain_new.c\
 			chain_min.c\
 			chain_max.c\
+			chain_zoom.c\
 			start_rendering.c\
 			img_put_pixel.c\
 			img_putline.c\

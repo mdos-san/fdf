@@ -12,25 +12,9 @@
 
 #include "fdf.h"
 
-void	pnt_translate(t_pnt *pnt, t_vec vec, int nb, int neg)
+void	pnt_translate(t_pnt *pnt, t_vec vec, int nb)
 {
-	int	i;
-
-	i = 0;
-	while (i < nb)
-	{
-		if (!neg)
-		{
-			pnt->x += vec.x;
-			pnt->y += vec.y;
-			pnt->z += vec.z;
-		}
-		else
-		{
-			pnt->x -= vec.x;
-			pnt->y -= vec.y;
-			pnt->z -= vec.z;
-		}
-		i++;
-	}
+	pnt->x += vec.x * nb;
+	pnt->y += vec.y * nb;
+	pnt->z += vec.z * nb;
 }

@@ -23,14 +23,13 @@ void	draw(t_par *par)
 	repere_rotate_z(par->rep, par->angle_z);
 	while (cur->next)
 	{
-		tmp.x = cur->pnt->x;
-		tmp.y = cur->pnt->y;
-		tmp.z = cur->pnt->z;
-		pnt_translate(&tmp, par->rep->vx, fabs(cur->pnt->x), (cur->pnt->x > 0) ? 0 : 1);
-		pnt_translate(&tmp, par->rep->vy, fabs(cur->pnt->y), (cur->pnt->y > 0) ? 0 : 1);
-		pnt_translate(&tmp, par->rep->vz, fabs(cur->pnt->z), (cur->pnt->z > 0) ? 0 : 1);
+		rotate_x(cur->pnt, par->angle_x);
+		rotate_y(cur->pnt, par->angle_y);
+		rotate_z(cur->pnt, par->angle_z);
+		tmp = *cur->pnt;
 		tmp.x += par->rep->origin.x;
 		tmp.y += par->rep->origin.y;
+		tmp.z += par->rep->origin.z;
 		img_put_pixel(par, tmp, cur->pnt->color);
 		cur = cur->next;
 	}

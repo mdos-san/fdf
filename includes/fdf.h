@@ -109,13 +109,14 @@ typedef struct		s_par
 t_chain	*chain_new(void);
 int		chain_max(t_chain *chain);
 int		chain_min(t_chain *chain);
+void	chain_zoom(t_chain *chain, double zoom);
 void	start_rendering(t_par *par);
 void	img_put_pixel(t_par *par, t_pnt pnt, int color);
 void	img_clear(t_par *par);
 t_pnt	*pnt_new(double x, double y, double z, unsigned int color);
 t_pnt	pnt_get(double x, double y, double z);
 void	pnt_init(t_pnt *pnt, double x, double y, double z);
-void	pnt_translate(t_pnt *pnt, t_vec vec, int nb, int neg);
+void	pnt_translate(t_pnt *pnt, t_vec vec, int nb);
 void	draw(t_par *par);
 void	get_pnt(t_par *par, unsigned int color1, unsigned int color2);
 void	get_pnt_color(t_par *par, unsigned int color1, unsigned int color2);
