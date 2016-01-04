@@ -19,21 +19,15 @@ int	loop_hook(t_par *par)
 		vec_multiply(&par->rep->vx, 1.1);
 		vec_multiply(&par->rep->vy, 1.1);
 		vec_multiply(&par->rep->vz, 1.1);
-		chain_zoom(par->chain, 1.1);
+		chain_zoom(par->chain, 1.1, *par->rep);
 	}
 	if (par->event_zoom == -1)
 	{
 		vec_multiply(&par->rep->vx, 0.9);
 		vec_multiply(&par->rep->vy, 0.9);
 		vec_multiply(&par->rep->vz, 0.9);
-		chain_zoom(par->chain, 0.9);
+		chain_zoom(par->chain, 0.9, *par->rep);
 	}
-	if (par->event_height == 1)
-	{
-		chain_ajust_height(par->chain, par->rep->vz, 0);
-	}
-	if (par->event_height == -1)
-		vec_multiply(&par->rep->vz, 0.9);
 	expose_hook(par);
 	return (1);
 }
