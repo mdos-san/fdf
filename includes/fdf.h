@@ -100,9 +100,7 @@ typedef struct		s_par
 	unsigned int	color1;
 	unsigned int	color2;
 	int				coef_add;
-	t_vec			*vx;
-	t_vec			*vy;
-	t_vec			*vz;
+	t_rep			*rep;
 	char			event_change_color;
 	char			event_zoom;
 	char			event_height;
@@ -115,6 +113,7 @@ void	start_rendering(t_par *par);
 void	img_put_pixel(t_par *par, t_pnt pnt, int color);
 void	img_clear(t_par *par);
 t_pnt	*pnt_new(double x, double y, double z, unsigned int color);
+t_pnt	pnt_get(double x, double y, double z);
 void	pnt_init(t_pnt *pnt, double x, double y, double z);
 void	pnt_translate(t_pnt *pnt, t_vec vec, int nb, int neg);
 void	draw(t_par *par);

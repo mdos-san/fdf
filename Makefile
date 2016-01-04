@@ -26,8 +26,9 @@ SRC_C=\
 			img_put_pixel.c\
 			img_putline.c\
 			img_clear.c\
-			pnt_init.c\
 			pnt_new.c\
+			pnt_get.c\
+			pnt_init.c\
 			pnt_translate.c\
 			draw.c\
 			get_pnt.c\
