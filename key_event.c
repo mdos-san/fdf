@@ -6,7 +6,7 @@
 /*   By: mdos-san <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/28 15:25:18 by mdos-san          #+#    #+#             */
-/*   Updated: 2015/12/28 17:08:17 by mdos-san         ###   ########.fr       */
+/*   Updated: 2016/01/06 15:56:03 by mdos-san         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,9 +26,9 @@ int		key_pr(int keycode, t_par *par)
 		par->angle_z = -2;
 	if (keycode == 14 || keycode == 101)
 		par->angle_z = 2;
-	if (keycode == 65470)
+	if (keycode == 65470 || keycode == 69)
 		par->event_zoom = 1;
-	if (keycode == 65471)
+	if (keycode == 65471 || keycode == 78)
 		par->event_zoom = -1;
 	if (keycode == 65472)
 		par->event_height = 1;
@@ -53,9 +53,9 @@ int		key_rl(int keycode, t_par *par)
 		par->angle_z = 0;
 	if (keycode == 14 || keycode == 101)
 		par->angle_z = 0;
-	if (keycode == 65470)
+	if (keycode == 65470 || keycode == 78)
 		par->event_zoom = 0;
-	if (keycode == 65471)
+	if (keycode == 65471 || keycode == 69)
 		par->event_zoom = 0;
 	if (keycode == 65472)
 		par->event_height = 0;

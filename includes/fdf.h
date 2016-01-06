@@ -6,7 +6,7 @@
 /*   By: mdos-san <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/12 09:24:25 by mdos-san          #+#    #+#             */
-/*   Updated: 2015/12/30 18:14:22 by mdos-san         ###   ########.fr       */
+/*   Updated: 2016/01/06 15:59:48 by mdos-san         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,8 +24,8 @@
 # define KeyPressMask (1L<<0)
 # define KeyRelease 3
 # define KeyReleaseMask (1L<<1)
-# define WIDTH 800
-# define HEIGHT 600
+# define WIDTH 1920
+# define HEIGHT 1080
 # define BLACK 0x000000
 # define WHITE 0xFFFFFF
 # define RED 0xFF0000
