@@ -6,7 +6,7 @@
 #    By: mdos-san <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2015/12/18 17:35:31 by mdos-san          #+#    #+#              #
-#    Updated: 2016/01/12 06:44:37 by mdos-san         ###   ########.fr        #
+#    Updated: 2016/01/12 06:53:24 by mdos-san         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,8 +15,7 @@ NAME=		fdf
 COMPILER=	gcc
 FLAGS=		-Werror -Wextra -Wall -g3 -fsanitize=address
 INCLUDES=	-I./includes
-LIBS2=		libft.a libmlx.a -lX11 -lXext -lm
-LIBS=		libft.a  -lmlx -framework OpenGL -framework AppKit -lm
+LIBS=		libft.a -lmlx -framework OpenGL -framework AppKit -lm
 
 SRC_C=\
 			chain_new.c\
@@ -60,17 +59,17 @@ objects:
 	@mkdir objects
 
 libft.a:
-	make re -C libft
-	cp libft/libft.a .
-	make fclean -C libft
+	make re -C libs/libft
+	cp libs/libft/libft.a .
+	make fclean -C libs/libft
 
 libft.h:
-	cp libft/includes/libft.h includes
+	cp libs/libft/includes/libft.h includes
 
 libmlx.a:
-	make -C minilibx_macos
-	cp minilibx_macos/libmlx.a .
-	make clean -C minilibx_macos
+	make -C libs/minilibx_macos
+	cp libs/minilibx_macos/libmlx.a .
+	make clean -C libs/minilibx_macos
 
 objects/%.o: srcs/%.c
 	$(COMPILER) $(FLAGS) $(INCLUDES) -c $<
