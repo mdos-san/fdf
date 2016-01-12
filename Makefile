@@ -6,7 +6,7 @@
 #    By: mdos-san <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2015/12/18 17:35:31 by mdos-san          #+#    #+#              #
-#    Updated: 2016/01/12 06:35:50 by mdos-san         ###   ########.fr        #
+#    Updated: 2016/01/12 06:44:37 by mdos-san         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -54,7 +54,10 @@ SRC_C=\
 
 SRC_O=$(SRC_C:.c=.o)
 
-all: libft.a includes/libft.h libmlx.a $(SRC_O) $(NAME)
+all: objects libft.a includes/libft.h libmlx.a $(SRC_O:%=objects/%) $(NAME)
+
+objects:
+	@mkdir objects
 
 libft.a:
 	make re -C libft
@@ -69,18 +72,15 @@ libmlx.a:
 	cp minilibx_macos/libmlx.a .
 	make clean -C minilibx_macos
 
-%.o: srcs/%.c
+objects/%.o: srcs/%.c
 	$(COMPILER) $(FLAGS) $(INCLUDES) -c $<
-
-ubuntu: $(SRC_O) $(SRC_C) libft.a includes/libft.h includes/fdf.h
-	cp ../libmlx.a .
-	$(COMPILER) $(FLAGS) $(INCLUDES) -o $(NAME) $(SRC_O) $(LIBS2)
+	@mv $(notdir $@) objects
 
 $(NAME): $(SRC_C:%=srcs/%) includes/fdf.h
-	$(COMPILER) $(FLAGS) $(INCLUDES) -o $(NAME) $(SRC_O) $(LIBS)
+	$(COMPILER) $(FLAGS) $(INCLUDES) -o $(NAME) $(SRC_O:%=objects/%) $(LIBS)
 
 clean:
-	rm -rf $(SRC_O)
+	rm -rf objects
 
 fclean: clean
 	rm -rf fdf libft.a libmlx.a
