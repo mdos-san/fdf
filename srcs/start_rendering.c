@@ -6,7 +6,7 @@
 /*   By: mdos-san <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/16 16:25:03 by mdos-san          #+#    #+#             */
-/*   Updated: 2015/12/30 18:16:49 by mdos-san         ###   ########.fr       */
+/*   Updated: 2016/01/12 06:29:12 by mdos-san         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,8 +40,8 @@ void	start_rendering(t_par *par)
 	par->angle_x = 0;
 	par->angle_y = 0;
 	par->angle_z = 0;
-	par->color1 = BLUE;
-	par->color2 = RED;
+	par->color1 = GREEN;
+	par->color2 = 0x0000FF;
 	par->coef = 1;
 	par->rep = repere_new(vec_get(1, 0, 0),
 							vec_get(0, 1, 0),

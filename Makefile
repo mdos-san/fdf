@@ -6,7 +6,7 @@
 #    By: mdos-san <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2015/12/18 17:35:31 by mdos-san          #+#    #+#              #
-#    Updated: 2015/12/30 17:47:54 by mdos-san         ###   ########.fr        #
+#    Updated: 2016/01/12 06:35:50 by mdos-san         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -69,14 +69,14 @@ libmlx.a:
 	cp minilibx_macos/libmlx.a .
 	make clean -C minilibx_macos
 
-%.o: %.c
+%.o: srcs/%.c
 	$(COMPILER) $(FLAGS) $(INCLUDES) -c $<
 
 ubuntu: $(SRC_O) $(SRC_C) libft.a includes/libft.h includes/fdf.h
 	cp ../libmlx.a .
 	$(COMPILER) $(FLAGS) $(INCLUDES) -o $(NAME) $(SRC_O) $(LIBS2)
 
-$(NAME): $(SRC_C) includes/fdf.h
+$(NAME): $(SRC_C:%=srcs/%) includes/fdf.h
 	$(COMPILER) $(FLAGS) $(INCLUDES) -o $(NAME) $(SRC_O) $(LIBS)
 
 clean:
