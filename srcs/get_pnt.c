@@ -48,7 +48,7 @@ void	get_pnt(t_par *par, unsigned int color1, unsigned int color2)
 		{
 			cur->pnt->x = i;
 			cur->pnt->y = y;
-			cur->pnt->z = ft_atoi(tab[i]);
+			cur->pnt->z = ft_atoi(tab[i]) * par->coef;
 			cur->pnt->color = color1;
 			tmp = chain_new();
 			cur->next = tmp;

@@ -28,6 +28,16 @@ int	loop_hook(t_par *par)
 		vec_multiply(&par->rep->vz, 0.9);
 		chain_zoom(par->chain, 0.9, *par->rep);
 	}
+	if (par->event_height == 1)
+	{
+		par->coef += 0.1;
+		get_pnt(par, par->color1, par->color2);
+	}
+	if (par->event_height == -1)
+	{
+		par->coef -= 0.1;
+		get_pnt(par, par->color1, par->color2);
+	}
 	expose_hook(par);
 	return (1);
 }
