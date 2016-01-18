@@ -15,7 +15,15 @@ NAME=		fdf
 COMPILER=	gcc
 FLAGS=		-Werror -Wextra -Wall -g3 -fsanitize=address
 INCLUDES=	-I./includes
-LIBS=		libft.a -lmlx -framework OpenGL -framework AppKit -lm
+LIBS=		libft.a libmlx.a -framework OpenGL -framework AppKit -lm
+MLX_PATH	= libs/minilibx_macos
+
+OS			= $(shell uname)
+
+ifeq ($(OS), Linux)
+MLX_PATH	= libs/minilibx_linux
+LIBS		= libft.a libmlx.a -lX11 -lXext -lm
+endif
 
 SRC_C=\
 			chain_new.c\
@@ -67,9 +75,9 @@ libft.h:
 	cp libs/libft/includes/libft.h includes
 
 libmlx.a:
-	make -C libs/minilibx_macos
-	cp libs/minilibx_macos/libmlx.a .
-	make clean -C libs/minilibx_macos
+	make -C $(MLX_PATH)
+	cp $(MLX_PATH)/libmlx.a .
+	make clean -C $(MLX_PATH)
 
 objects/%.o: srcs/%.c
 	$(COMPILER) $(FLAGS) $(INCLUDES) -c $<
