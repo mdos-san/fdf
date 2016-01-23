@@ -6,7 +6,7 @@
 /*   By: mdos-san <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/12 09:24:25 by mdos-san          #+#    #+#             */
-/*   Updated: 2016/01/06 15:59:48 by mdos-san         ###   ########.fr       */
+/*   Updated: 2016/01/23 12:23:14 by mdos-san         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -147,5 +147,6 @@ t_rep	*repere_new(t_vec vx, t_vec vy, t_vec vz, t_pnt origin);
 void	repere_rotate_x(t_rep *rep, double angle);
 void	repere_rotate_y(t_rep *rep, double angle);
 void	repere_rotate_z(t_rep *rep, double angle);
+int		parse(t_par *par);
 
 #endif

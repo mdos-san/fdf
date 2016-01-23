@@ -6,7 +6,7 @@
 /*   By: mdos-san <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/14 15:39:19 by mdos-san          #+#    #+#             */
-/*   Updated: 2016/01/23 11:55:53 by mdos-san         ###   ########.fr       */
+/*   Updated: 2016/01/23 12:25:01 by mdos-san         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,8 @@ int	main(int ac, char **av)
 		return (0);
 	par->coef = 1;
 	par->file = av[1];
-	start_rendering(par);
+	par->size_y = 0;
+	parse(par);
+//	start_rendering(par);
 	return (0);
 }

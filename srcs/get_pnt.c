@@ -6,7 +6,7 @@
 /*   By: mdos-san <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/18 15:07:28 by mdos-san          #+#    #+#             */
-/*   Updated: 2016/01/23 12:02:26 by mdos-san         ###   ########.fr       */
+/*   Updated: 2016/01/23 12:12:19 by mdos-san         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,11 +60,6 @@ void	get_pnt(t_par *par, unsigned int color1, unsigned int color2)
 		i = 0;
 		y++;
 	}
-	par->size_y = y;
-	ft_putendl("size_x");
-	ft_putnbrl(par->size_x);
-	ft_putendl("size_y");
-	ft_putnbrl(par->size_y);
 	get_pnt_color(par, color1, color2);
 	ajust(par);
 	close(par->fd);

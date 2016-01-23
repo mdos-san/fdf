@@ -6,7 +6,7 @@
 #    By: mdos-san <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2015/12/18 17:35:31 by mdos-san          #+#    #+#              #
-#    Updated: 2016/01/23 12:02:39 by mdos-san         ###   ########.fr        #
+#    Updated: 2016/01/23 12:10:27 by mdos-san         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -57,6 +57,7 @@ SRC_C=\
 			vec_add.c\
 			repere_new.c\
 			repere_rotate.c\
+			parse.c\
 			main.c
 
 SRC_O=$(SRC_C:.c=.o)
