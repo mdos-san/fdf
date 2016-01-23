@@ -6,7 +6,7 @@
 /*   By: mdos-san <mdos-san@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/09 18:09:33 by mdos-san          #+#    #+#             */
-/*   Updated: 2016/01/23 10:18:15 by mdos-san         ###   ########.fr       */
+/*   Updated: 2016/01/23 11:29:30 by mdos-san         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,7 +69,7 @@ static int	end_file(char **line, char **st_str)
 
 int			get_next_line(int const fd, char **line)
 {
-	static char	*st_str = 0;
+	static char	*st_str = NULL;
 	char		buf[BUFF_SIZE + 1];
 	int			len;
 	int			ret;

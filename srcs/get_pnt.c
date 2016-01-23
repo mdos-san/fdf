@@ -6,7 +6,7 @@
 /*   By: mdos-san <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/18 15:07:28 by mdos-san          #+#    #+#             */
-/*   Updated: 2016/01/23 11:05:40 by mdos-san         ###   ########.fr       */
+/*   Updated: 2016/01/23 12:02:26 by mdos-san         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,6 +43,7 @@ void	get_pnt(t_par *par, unsigned int color1, unsigned int color2)
 	par->fd = open(par->file, O_RDONLY);
 	while (get_next_line(par->fd, &line))
 	{
+		ft_putendl(line);
 		tab = ft_strsplit(line, ' ');
 		while (tab[i])
 		{
