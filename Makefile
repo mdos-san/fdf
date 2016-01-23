@@ -6,7 +6,7 @@
 #    By: mdos-san <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2015/12/18 17:35:31 by mdos-san          #+#    #+#              #
-#    Updated: 2016/01/23 11:01:19 by mdos-san         ###   ########.fr        #
+#    Updated: 2016/01/23 11:11:54 by mdos-san         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -84,12 +84,13 @@ libmlx.a:
 	@echo "Done!"
 
 objects/%.o: srcs/%.c
-	$(COMPILER) $(FLAGS) $(INCLUDES) -c $<
+	@echo "Compling $<"
+	@$(COMPILER) $(FLAGS) $(INCLUDES) -c $<
 	@mv $(notdir $@) objects
 
 $(NAME): $(SRC_C:%=srcs/%) includes/fdf.h
-	@echo "Compling $<"
 	@$(COMPILER) $(FLAGS) $(INCLUDES) -o $(NAME) $(SRC_O:%=objects/%) $(LIBS)
+	@echo "Fdf has been created!"
 
 clean:
 	rm -rf objects
