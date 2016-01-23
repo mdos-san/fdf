@@ -6,7 +6,7 @@
 #    By: mdos-san <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2015/12/18 17:35:31 by mdos-san          #+#    #+#              #
-#    Updated: 2016/01/12 06:53:24 by mdos-san         ###   ########.fr        #
+#    Updated: 2016/01/23 09:20:12 by mdos-san         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,7 +15,7 @@ NAME=		fdf
 COMPILER=	gcc
 FLAGS=		-Werror -Wextra -Wall -g3 -fsanitize=address
 INCLUDES=	-I./includes
-LIBS=		libft.a libmlx.a -framework OpenGL -framework AppKit -lm
+LIBS=		libft.a -lmlx -framework OpenGL -framework AppKit -lm
 MLX_PATH	= libs/minilibx_macos
 
 OS			= $(shell uname)

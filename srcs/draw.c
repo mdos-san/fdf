@@ -6,7 +6,7 @@
 /*   By: mdos-san <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/17 19:03:46 by mdos-san          #+#    #+#             */
-/*   Updated: 2015/12/30 18:18:36 by mdos-san         ###   ########.fr       */
+/*   Updated: 2016/01/23 09:20:54 by mdos-san         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,8 +70,5 @@ void	draw(t_par *par)
 		img_put_pixel(par, *cur->pnt, cur->pnt->color);
 		cur = cur->next;
 	}
-	vec_draw(par, &par->rep->vx, BLUE);
-	vec_draw(par, &par->rep->vy, GREEN);
-	vec_draw(par, &par->rep->vz, RED);
 	draw_line(par);
 }
