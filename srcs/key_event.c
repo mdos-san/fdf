@@ -6,7 +6,7 @@
 /*   By: mdos-san <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/28 15:25:18 by mdos-san          #+#    #+#             */
-/*   Updated: 2016/01/06 15:56:03 by mdos-san         ###   ########.fr       */
+/*   Updated: 2016/01/23 10:53:25 by mdos-san         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,17 +30,15 @@ int		key_pr(int keycode, t_par *par)
 		par->event_zoom = 1;
 	if (keycode == 65471 || keycode == 78)
 		par->event_zoom = -1;
-	if (keycode == 65472)
+	if (keycode == 65472 || keycode == 120)
 		par->event_height = 1;
-	if (keycode == 65473)
+	if (keycode == 65473 || keycode == 122)
 		par->event_height = -1;
 	return (1);
 }
 
 int		key_rl(int keycode, t_par *par)
 {
-	ft_putnbr(keycode);
-	ft_putchar('\n');
 	if (keycode == 0 || keycode == 100)
 		par->angle_y = 0;
 	if (keycode == 2 || keycode == 97)
@@ -57,9 +55,9 @@ int		key_rl(int keycode, t_par *par)
 		par->event_zoom = 0;
 	if (keycode == 65471 || keycode == 69)
 		par->event_zoom = 0;
-	if (keycode == 65472)
+	if (keycode == 65472 || keycode == 120)
 		par->event_height = 0;
-	if (keycode == 65473)
+	if (keycode == 65473 || keycode == 122)
 		par->event_height = 0;
 	if (keycode == 53 || keycode == 65307)
 		exit (0);

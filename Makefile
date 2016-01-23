@@ -6,14 +6,14 @@
 #    By: mdos-san <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2015/12/18 17:35:31 by mdos-san          #+#    #+#              #
-#    Updated: 2016/01/23 09:20:12 by mdos-san         ###   ########.fr        #
+#    Updated: 2016/01/23 11:01:19 by mdos-san         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME=		fdf
 
 COMPILER=	gcc
-FLAGS=		-Werror -Wextra -Wall -g3 -fsanitize=address
+FLAGS=		-Werror -Wextra -Wall
 INCLUDES=	-I./includes
 LIBS=		libft.a -lmlx -framework OpenGL -framework AppKit -lm
 MLX_PATH	= libs/minilibx_macos
@@ -67,24 +67,29 @@ objects:
 	@mkdir objects
 
 libft.a:
-	make re -C libs/libft
-	cp libs/libft/libft.a .
-	make fclean -C libs/libft
+	@echo "Compling libft.a"
+	@make re -C libs/libft
+	@cp libs/libft/libft.a .
+	@make fclean -C libs/libft
+	@echo "Done!"
 
 libft.h:
-	cp libs/libft/includes/libft.h includes
+	@cp libs/libft/includes/libft.h includes
 
 libmlx.a:
-	make -C $(MLX_PATH)
-	cp $(MLX_PATH)/libmlx.a .
-	make clean -C $(MLX_PATH)
+	@echo "Compiling libmlx.a"
+	@make -C $(MLX_PATH)
+	@cp $(MLX_PATH)/libmlx.a .
+	@make clean -C $(MLX_PATH)
+	@echo "Done!"
 
 objects/%.o: srcs/%.c
 	$(COMPILER) $(FLAGS) $(INCLUDES) -c $<
 	@mv $(notdir $@) objects
 
 $(NAME): $(SRC_C:%=srcs/%) includes/fdf.h
-	$(COMPILER) $(FLAGS) $(INCLUDES) -o $(NAME) $(SRC_O:%=objects/%) $(LIBS)
+	@echo "Compling $<"
+	@$(COMPILER) $(FLAGS) $(INCLUDES) -o $(NAME) $(SRC_O:%=objects/%) $(LIBS)
 
 clean:
 	rm -rf objects

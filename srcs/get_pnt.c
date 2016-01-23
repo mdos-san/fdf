@@ -6,7 +6,7 @@
 /*   By: mdos-san <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/18 15:07:28 by mdos-san          #+#    #+#             */
-/*   Updated: 2015/12/30 18:17:46 by mdos-san         ###   ########.fr       */
+/*   Updated: 2016/01/23 11:05:40 by mdos-san         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,8 @@ void	ajust(t_par *par)
 	cur = par->chain;
 	while (cur->next)
 	{
-		cur->pnt->x += par->rep->origin.x - par->size_x / 2;
-		cur->pnt->y += par->rep->origin.y - par->size_y / 2;
+		cur->pnt->x += par->rep->origin.x - ((double)par->size_x - 1) / 2;
+		cur->pnt->y += par->rep->origin.y - ((double)par->size_y - 1) / 2;
 		cur = cur->next;
 	}
 }
@@ -60,6 +60,10 @@ void	get_pnt(t_par *par, unsigned int color1, unsigned int color2)
 		y++;
 	}
 	par->size_y = y;
+	ft_putendl("size_x");
+	ft_putnbrl(par->size_x);
+	ft_putendl("size_y");
+	ft_putnbrl(par->size_y);
 	get_pnt_color(par, color1, color2);
 	ajust(par);
 	close(par->fd);

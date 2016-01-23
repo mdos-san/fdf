@@ -16,7 +16,8 @@ void	ft_strdel(char **as)
 {
 	if (as != NULL)
 	{
-		free(*as);
+		if (*as)
+			free(*as);
 		*as = NULL;
 	}
 }
