@@ -6,7 +6,7 @@
 /*   By: mdos-san <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/14 15:39:19 by mdos-san          #+#    #+#             */
-/*   Updated: 2016/01/23 12:25:01 by mdos-san         ###   ########.fr       */
+/*   Updated: 2016/01/23 14:41:53 by mdos-san         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,8 +25,15 @@ int	main(int ac, char **av)
 		return (0);
 	par->coef = 1;
 	par->file = av[1];
+	par->size_x = 0;
 	par->size_y = 0;
-	parse(par);
-//	start_rendering(par);
+	par->chain = NULL;
+	par->rep = repere_new(vec_get(1, 0, 0),
+							vec_get(0, 1, 0),
+							vec_get(0, 0, 1),
+							pnt_get(WIDTH / 2, HEIGHT / 2, 0));
+	if (parse(par) == -1)
+		return (0);
+	start_rendering(par);
 	return (0);
 }

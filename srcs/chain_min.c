@@ -6,7 +6,7 @@
 /*   By: mdos-san <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/28 12:37:03 by mdos-san          #+#    #+#             */
-/*   Updated: 2015/12/28 12:39:59 by mdos-san         ###   ########.fr       */
+/*   Updated: 2016/01/23 14:36:00 by mdos-san         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ int	chain_min(t_chain *chain)
 
 	cur = chain;
 	min = cur->pnt->z;
-	while (cur->next)
+	while (cur)
 	{
 		if (min > cur->pnt->z)
 			min = cur->pnt->z;

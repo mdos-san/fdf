@@ -6,7 +6,7 @@
 /*   By: mdos-san <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/16 16:25:03 by mdos-san          #+#    #+#             */
-/*   Updated: 2016/01/23 11:56:21 by mdos-san         ###   ########.fr       */
+/*   Updated: 2016/01/23 14:51:48 by mdos-san         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,12 +31,12 @@ int	loop_hook(t_par *par)
 	if (par->event_height == 1)
 	{
 		par->coef += 0.1;
-		get_pnt(par, par->color1, par->color2);
+		parse(par);
 	}
 	if (par->event_height == -1)
 	{
 		par->coef -= 0.1;
-		get_pnt(par, par->color1, par->color2);
+		parse(par);
 	}
 	expose_hook(par);
 	return (1);
@@ -52,13 +52,7 @@ void	start_rendering(t_par *par)
 	par->angle_z = 0;
 	par->color1 = RED;
 	par->color2 = BLUE;
-	par->coef = 1;
-	par->rep = repere_new(vec_get(1, 0, 0),
-							vec_get(0, 1, 0),
-							vec_get(0, 0, 1),
-							pnt_get(WIDTH / 2, HEIGHT / 2, 0));
 	img_clear(par);
-	get_pnt(par, par->color1, par->color2);
 	draw(par);
 	key_event(par);
 	expose_event(par);

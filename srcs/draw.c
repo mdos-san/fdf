@@ -6,7 +6,7 @@
 /*   By: mdos-san <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/17 19:03:46 by mdos-san          #+#    #+#             */
-/*   Updated: 2016/01/23 09:20:54 by mdos-san         ###   ########.fr       */
+/*   Updated: 2016/01/23 14:44:28 by mdos-san         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ static void	draw_line(t_par *par)
 	x = 0;
 	y = 0;
 	cur = par->chain;
-	while (cur->next)
+	while (cur)
 	{
 		if (y < par->size_y - 1)
 			get_next_y(par, cur);
@@ -62,7 +62,7 @@ void	draw(t_par *par)
 	repere_rotate_x(par->rep, par->angle_x);
 	repere_rotate_y(par->rep, par->angle_y);
 	repere_rotate_z(par->rep, par->angle_z);
-	while (cur->next)
+	while (cur)
 	{
 		rotate_x(cur->pnt, par->angle_x, *par->rep);
 		rotate_y(cur->pnt, par->angle_y, *par->rep);

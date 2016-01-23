@@ -5,7 +5,7 @@ void	chain_zoom(t_chain *chain, double zoom, t_rep rep)
 	t_chain	*cur;
 
 	cur = chain;
-	while (cur->next)
+	while (cur)
 	{
 		cur->pnt->x -= rep.origin.x;
 		cur->pnt->y -= rep.origin.y;
