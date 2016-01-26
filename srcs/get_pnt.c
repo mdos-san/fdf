@@ -63,4 +63,5 @@ void	get_pnt(t_par *par, unsigned int color1, unsigned int color2)
 	get_pnt_color(par, color1, color2);
 	ajust(par);
 	close(par->fd);
+
 }

@@ -13,7 +13,7 @@
 NAME=		fdf
 
 COMPILER=	gcc
-FLAGS=		-Werror -Wextra -Wall
+FLAGS=		-Werror -Wextra -Wall -g3 -fsanitize=address
 INCLUDES=	-I./includes
 LIBS=		libft.a -lmlx -framework OpenGL -framework AppKit -lm
 MLX_PATH	= libs/minilibx_macos
@@ -98,5 +98,6 @@ clean:
 
 fclean: clean
 	rm -rf fdf libft.a libmlx.a
+	rm -rf libs/minilibx_linux/libmlx_Linux.a
 
 re: fclean all

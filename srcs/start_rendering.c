@@ -53,7 +53,7 @@ void	start_rendering(t_par *par)
 	par->color1 = RED;
 	par->color2 = BLUE;
 	img_clear(par);
-	draw(par);
+	parse(par);
 	key_event(par);
 	expose_event(par);
 	mlx_loop_hook(par->mlx, loop_hook, par);

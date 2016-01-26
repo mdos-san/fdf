@@ -83,6 +83,11 @@ int	parse(t_par *par)
 	ft_putstr("size_x = ");
 	ft_putnbrl(par->size_x);
 	ajust(par);
+	par->angle_z = 45;
+	par->angle_x = 45;
+	draw(par);
+	par->angle_z = 0;
+	par->angle_x = 0;
 	close(fd);
 	return (1);
 }
