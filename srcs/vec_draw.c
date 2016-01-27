@@ -12,7 +12,7 @@
 
 #include "fdf.h"
 
-void	vec_draw(t_par *par, t_vec *vec, unsigned int color)
+void	vec_draw(t_par *par, t_vec *vec, t_color color)
 {
 	t_pnt	a;
 	t_pnt	b;

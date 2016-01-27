@@ -27,8 +27,6 @@ int	main(int ac, char **av)
 	par->file = av[1];
 	par->size_x = 0;
 	par->size_y = 0;
-	par->color1 = BLUE;
-	par->color2 = RED;
 	par->chain = NULL;
 	par->rep = repere_new(vec_get(1, 0, 0),
 							vec_get(0, 1, 0),

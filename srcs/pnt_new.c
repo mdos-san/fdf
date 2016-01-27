@@ -12,7 +12,7 @@
 
 #include "fdf.h"
 
-t_pnt	*pnt_new(double x, double y, double z, unsigned int color)
+t_pnt	*pnt_new(double x, double y, double z, t_color color)
 {
 	t_pnt	*new;
 
