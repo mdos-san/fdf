@@ -1,6 +1,6 @@
 #include "fdf.h"
 
-t_color	*color_new(char r, char g, char b)
+t_color	*color_new(unsigned char r, unsigned char g, unsigned char b)
 {
 	t_color	*new;
 

@@ -12,20 +12,18 @@
 
 #include "fdf.h"
 
-void	get_pnt_color(t_par *par, unsigned int color1, unsigned int color2)
+void	get_pnt_color(t_par *par)
 {
 	int		min;
 	int		length;
-	t_grad	*grad;
 	t_chain	*cur;
 
 	cur = par->chain;
 	min = chain_min(cur);
 	length = chain_max(cur) - chain_min(cur);
-	grad = get_grad(&color1, &color2, length);
 	while (cur)
 	{
-		grad_apply(cur->pnt, *grad, cur->pnt->z - min);
+		cur->pnt->color = color_step(par->color1, par->color2, length, cur->pnt->z - min);
 		cur = cur->next;
 	}
 }

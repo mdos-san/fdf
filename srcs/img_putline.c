@@ -18,7 +18,7 @@ void	img_putline(t_par *par, t_pnt a, t_pnt b)
 	t_color	color;
 
 	coef = (b.y - a.y) / (b.x - a.x);
-	color = color_get(0, 0, 255, 0);
+	color = a.color;
 	if (-1 <= coef && coef <= 1)
 	{
 		while ((int)a.x != (int)b.x)

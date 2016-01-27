@@ -62,6 +62,8 @@ SRC_C=\
 			color_init.c\
 			color_get.c\
 			color_convert.c\
+			color_average.c\
+			color_step.c\
 			main.c
 
 SRC_O=$(SRC_C:.c=.o)

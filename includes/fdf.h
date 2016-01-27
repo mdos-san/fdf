@@ -35,10 +35,10 @@
 
 typedef struct		s_color
 {
-	char			r;
-	char			g;
-	char			b;
-	char			a;
+	unsigned char	r;
+	unsigned char	g;
+	unsigned char	b;
+	unsigned char	a;
 }					t_color;
 
 typedef struct		s_pnt
@@ -46,7 +46,7 @@ typedef struct		s_pnt
 	double			x;
 	double			y;
 	double			z;
-	unsigned int	color;
+	t_color			color;
 }					t_pnt;
 
 typedef struct		s_grad
@@ -105,8 +105,8 @@ typedef struct		s_par
 	t_pnt	**pnt;
 	int		nb_pnt;
 	double	coef;
-	unsigned int	color1;
-	unsigned int	color2;
+	t_color	color1;
+	t_color	color2;
 	int				coef_add;
 	t_rep			*rep;
 	char			event_change_color;
@@ -126,7 +126,7 @@ t_pnt	pnt_get(double x, double y, double z);
 void	pnt_init(t_pnt *pnt, double x, double y, double z);
 void	pnt_translate(t_pnt *pnt, t_vec vec, int nb);
 void	draw(t_par *par);
-void	get_pnt_color(t_par *par, unsigned int color1, unsigned int color2);
+void	get_pnt_color(t_par *par);
 void	rotate_x(t_pnt *pnt, double angle, t_rep rep);
 void	rotate_y(t_pnt *pnt, double angle, t_rep rep);
 void	rotate_z(t_pnt *pnt, double angle, t_rep rep);
@@ -152,10 +152,12 @@ void	repere_rotate_x(t_rep *rep, double angle);
 void	repere_rotate_y(t_rep *rep, double angle);
 void	repere_rotate_z(t_rep *rep, double angle);
 int		parse(t_par *par);
-t_color	*color_new(char r, char g, char b);
+t_color	*color_new(unsigned char r, unsigned char g, unsigned char b);
 void	color_del(t_color **addr);
-void	color_init(t_color *color, char r, char g, char b);
+void	color_init(t_color *color, unsigned char r, unsigned char g, unsigned char b);
 t_color	color_get(unsigned char r, unsigned char b, unsigned char g, unsigned char a);
 unsigned int	color_convert(t_color color);
+t_color	color_average(t_color a, t_color b);
+t_color	color_step(t_color c_a, t_color c_b, int nbr_stp, int act_stp);
 
 #endif

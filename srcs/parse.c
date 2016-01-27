@@ -54,7 +54,7 @@ int	parse(t_par *par)
 			cur->pnt->x = i;
 			cur->pnt->y = par->size_y;
 			cur->pnt->z = ft_atoi(data[i]) * par->coef;
-			cur->pnt->color = par->color1;
+			cur->pnt->color = color_get(0, 0, 0, 0);
 			if (tmp != NULL)
 				tmp->next = cur;
 			else
@@ -76,7 +76,7 @@ int	parse(t_par *par)
 		++par->size_y;
 	}
 	ajust(par);
-	get_pnt_color(par, par->color1, par->color2);
+	get_pnt_color(par);
 	par->angle_z = 45;
 	par->angle_x = 45;
 	draw(par);
