@@ -39,7 +39,6 @@ SRC_C=\
 			pnt_init.c\
 			pnt_translate.c\
 			draw.c\
-			get_pnt.c\
 			get_pnt_color.c\
 			rotate.c\
 			move_position.c\
@@ -58,6 +57,11 @@ SRC_C=\
 			repere_new.c\
 			repere_rotate.c\
 			parse.c\
+			color_new.c\
+			color_del.c\
+			color_init.c\
+			color_get.c\
+			color_convert.c\
 			main.c
 
 SRC_O=$(SRC_C:.c=.o)

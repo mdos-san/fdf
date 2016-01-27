@@ -67,7 +67,6 @@ void	draw(t_par *par)
 		rotate_x(cur->pnt, par->angle_x, *par->rep);
 		rotate_y(cur->pnt, par->angle_y, *par->rep);
 		rotate_z(cur->pnt, par->angle_z, *par->rep);
-		img_put_pixel(par, *cur->pnt, cur->pnt->color);
 		cur = cur->next;
 	}
 	draw_line(par);

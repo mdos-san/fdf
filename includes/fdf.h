@@ -33,6 +33,14 @@
 # define BLUE 0x0000FF
 # define LEN 10
 
+typedef struct		s_color
+{
+	char			r;
+	char			g;
+	char			b;
+	char			a;
+}					t_color;
+
 typedef struct		s_pnt
 {
 	double			x;
@@ -118,16 +126,12 @@ t_pnt	pnt_get(double x, double y, double z);
 void	pnt_init(t_pnt *pnt, double x, double y, double z);
 void	pnt_translate(t_pnt *pnt, t_vec vec, int nb);
 void	draw(t_par *par);
-void	get_pnt(t_par *par, unsigned int color1, unsigned int color2);
 void	get_pnt_color(t_par *par, unsigned int color1, unsigned int color2);
 void	rotate_x(t_pnt *pnt, double angle, t_rep rep);
 void	rotate_y(t_pnt *pnt, double angle, t_rep rep);
 void	rotate_z(t_pnt *pnt, double angle, t_rep rep);
 void	img_putline(t_par *par, t_pnt a, t_pnt b);
 void	move_position(t_par *par, int x, int y);
-unsigned int	*color_new(void);
-void			color_init(unsigned int *color, int value);
-void	color_add(unsigned int *a, unsigned int *b);
 t_grad			*grad_new(double r, double g, double b);
 t_grad			*get_grad(unsigned int *color1, unsigned int *color2, int size);
 void			grad_apply(t_pnt *pnt, t_grad grad, double coef);
@@ -148,5 +152,10 @@ void	repere_rotate_x(t_rep *rep, double angle);
 void	repere_rotate_y(t_rep *rep, double angle);
 void	repere_rotate_z(t_rep *rep, double angle);
 int		parse(t_par *par);
+t_color	*color_new(char r, char g, char b);
+void	color_del(t_color **addr);
+void	color_init(t_color *color, char r, char g, char b);
+t_color	color_get(unsigned char r, unsigned char b, unsigned char g, unsigned char a);
+unsigned int	color_convert(t_color color);
 
 #endif

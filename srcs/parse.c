@@ -43,12 +43,10 @@ int	parse(t_par *par)
 	tmp = NULL;
 	par->size_x = 0;
 	par->size_y = 0;
-	ft_putendl("=============  MAP  =============");
 	while ((ret = get_next_line(fd, &line)))
 	{
 		if (ret == -1)
 			return (-1);
-		ft_putendl(line);
 		data = ft_strsplit(line, ' ');
 		while (data[i])
 		{
@@ -56,7 +54,7 @@ int	parse(t_par *par)
 			cur->pnt->x = i;
 			cur->pnt->y = par->size_y;
 			cur->pnt->z = ft_atoi(data[i]) * par->coef;
-			cur->pnt->color = WHITE;
+			cur->pnt->color = par->color1;
 			if (tmp != NULL)
 				tmp->next = cur;
 			else
@@ -77,12 +75,8 @@ int	parse(t_par *par)
 		i = 0;
 		++par->size_y;
 	}
-	ft_putendl("============= INFO. =============");
-	ft_putstr("size_y = ");
-	ft_putnbrl(par->size_y);
-	ft_putstr("size_x = ");
-	ft_putnbrl(par->size_x);
 	ajust(par);
+	get_pnt_color(par, par->color1, par->color2);
 	par->angle_z = 45;
 	par->angle_x = 45;
 	draw(par);
