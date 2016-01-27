@@ -13,7 +13,7 @@
 NAME=		fdf
 
 COMPILER=	gcc
-FLAGS=		-Werror -Wextra -Wall -g3 -fsanitize=address
+FLAGS=		-Werror -Wextra -Wall
 INCLUDES=	-I./includes
 LIBS=		libft.a -lmlx -framework OpenGL -framework AppKit -lm
 MLX_PATH	= libs/minilibx_macos
