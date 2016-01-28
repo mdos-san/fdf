@@ -52,8 +52,6 @@ void	start_rendering(t_par *par)
 	par->angle_x = 0;
 	par->angle_y = 0;
 	par->angle_z = 0;
-	par->color1 = color_get(0, 0, 255, 0);
-	par->color2 = color_get(0, 255, 0, 0);
 	img_clear(par);
 	parse(par);
 	key_event(par);

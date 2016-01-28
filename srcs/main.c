@@ -23,6 +23,8 @@ int	main(int ac, char **av)
 		return (0);
 	if (!(par = (t_par*)malloc(sizeof(t_par))))
 		return (0);
+	par->color1 = color_get(0, 0, 255, 0);
+	par->color2 = color_get(0, 255, 0, 0);
 	par->coef = 1;
 	par->file = av[1];
 	par->size_x = 0;

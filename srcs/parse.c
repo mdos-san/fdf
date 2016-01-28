@@ -54,7 +54,7 @@ int	parse(t_par *par)
 			cur->pnt->x = i;
 			cur->pnt->y = par->size_y;
 			cur->pnt->z = ft_atoi(data[i]) * par->coef;
-			cur->pnt->color = color_get(0, 0, 0, 0);
+			cur->pnt->color = par->color1;
 			if (tmp != NULL)
 				tmp->next = cur;
 			else
