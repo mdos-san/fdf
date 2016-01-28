@@ -115,6 +115,7 @@ typedef struct		s_par
 }					t_par;
 
 t_chain	*chain_new(void);
+void	chain_del(t_chain **addr);
 int		chain_max(t_chain *chain);
 int		chain_min(t_chain *chain);
 void	chain_zoom(t_chain *chain, double zoom, t_rep rep);

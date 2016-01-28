@@ -31,11 +31,13 @@ int	loop_hook(t_par *par)
 	if (par->event_height == 1)
 	{
 		par->coef += 0.1;
+		chain_del(&par->chain);
 		parse(par);
 	}
 	if (par->event_height == -1)
 	{
 		par->coef -= 0.1;
+		chain_del(&par->chain);
 		parse(par);
 	}
 	expose_hook(par);

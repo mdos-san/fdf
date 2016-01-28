@@ -16,8 +16,13 @@ t_chain	*chain_new(void)
 {
 	t_chain	*new;
 
-	new = (t_chain*)malloc(sizeof(t_chain));
-	new->pnt = (t_pnt*)malloc(sizeof(t_pnt));
-	new->next = 0;
+	if (!(new = (t_chain*)malloc(sizeof(t_chain))))
+		return (NULL);
+	if (!(new->pnt = (t_pnt*)malloc(sizeof(t_pnt))))
+	{
+		chain_del(&new);
+		return (NULL);
+	}
+	new->next = NULL;
 	return (new);
 }

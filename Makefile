@@ -27,6 +27,7 @@ endif
 
 SRC_C=\
 			chain_new.c\
+			chain_del.c\
 			chain_min.c\
 			chain_max.c\
 			chain_zoom.c\
