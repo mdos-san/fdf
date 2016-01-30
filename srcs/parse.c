@@ -74,6 +74,15 @@ int	parse(t_par *par)
 		}
 		i = 0;
 		++par->size_y;
+		while (data[i])
+		{
+			free(data[i]);
+			data[i] = NULL;
+			++i;
+		}
+		i = 0;
+		if (data)
+			free(data);
 	}
 	ajust(par);
 	get_pnt_color(par);
