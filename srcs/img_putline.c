@@ -6,7 +6,7 @@
 /*   By: mdos-san <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/21 10:58:21 by mdos-san          #+#    #+#             */
-/*   Updated: 2015/12/28 15:17:48 by mdos-san         ###   ########.fr       */
+/*   Updated: 2016/02/12 00:20:31 by mdos-san         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ void	img_putline(t_par *par, t_pnt a, t_pnt b)
 	t_color	color;
 
 	coef = (b.y - a.y) / (b.x - a.x);
-	color = a.color;
+	color = color_average(a.color, b.color);
 	if (-1 <= coef && coef <= 1)
 	{
 		while ((int)a.x != (int)b.x)
