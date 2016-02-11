@@ -6,7 +6,7 @@
 /*   By: mdos-san <mdos-san@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/09 18:09:33 by mdos-san          #+#    #+#             */
-/*   Updated: 2016/01/23 11:29:30 by mdos-san         ###   ########.fr       */
+/*   Updated: 2016/02/11 23:19:04 by mdos-san         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@ static char	*ft_strdupadd(const char *s1, const char *s2, int len)
 	cpy = (char *)malloc(sizeof(char) * len + 1);
 	if (cpy == NULL)
 		return (NULL);
+	ft_bzero(cpy, len);
 	ft_strcpy(cpy, s1);
 	ft_strcat(cpy, s2);
 	return (cpy);
