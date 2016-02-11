@@ -6,7 +6,7 @@
 /*   By: mdos-san <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/17 19:03:46 by mdos-san          #+#    #+#             */
-/*   Updated: 2016/01/23 14:44:28 by mdos-san         ###   ########.fr       */
+/*   Updated: 2016/02/12 00:06:43 by mdos-san         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,9 +59,6 @@ void	draw(t_par *par)
 	t_chain		*cur;
 
 	cur = par->chain;
-	repere_rotate_x(par->rep, par->angle_x);
-	repere_rotate_y(par->rep, par->angle_y);
-	repere_rotate_z(par->rep, par->angle_z);
 	while (cur)
 	{
 		rotate_x(cur->pnt, par->angle_x, *par->rep);

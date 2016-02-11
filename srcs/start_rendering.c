@@ -6,7 +6,7 @@
 /*   By: mdos-san <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/16 16:25:03 by mdos-san          #+#    #+#             */
-/*   Updated: 2016/01/23 14:51:48 by mdos-san         ###   ########.fr       */
+/*   Updated: 2016/02/12 00:07:10 by mdos-san         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,19 +15,9 @@
 int	loop_hook(t_par *par)
 {
 	if (par->event_zoom == 1)
-	{
-		vec_multiply(&par->rep->vx, 1.1);
-		vec_multiply(&par->rep->vy, 1.1);
-		vec_multiply(&par->rep->vz, 1.1);
 		chain_zoom(par->chain, 1.1, *par->rep);
-	}
 	if (par->event_zoom == -1)
-	{
-		vec_multiply(&par->rep->vx, 0.9);
-		vec_multiply(&par->rep->vy, 0.9);
-		vec_multiply(&par->rep->vz, 0.9);
 		chain_zoom(par->chain, 0.9, *par->rep);
-	}
 	if (par->event_height == 1)
 	{
 		par->coef += 0.1;
