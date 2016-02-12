@@ -6,7 +6,7 @@
 /*   By: mdos-san <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/12 09:24:25 by mdos-san          #+#    #+#             */
-/*   Updated: 2016/02/12 02:05:31 by mdos-san         ###   ########.fr       */
+/*   Updated: 2016/02/12 02:48:03 by mdos-san         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,6 +84,13 @@ typedef struct		s_even
 
 typedef struct		s_par
 {
+	void			*mlx;
+	void			*win;
+	void			*img;
+	char			*data;
+	int				bpp;
+	int				sl;
+	int				ed;
 	int				fd;
 	char			*file;
 	t_chain			*chain;
@@ -92,16 +99,6 @@ typedef struct		s_par
 	double			angle_x;
 	double			angle_y;
 	double			angle_z;
-	void			*mlx;
-	void			*win;
-	void			*img;
-	char			*data;
-	int				bpp;
-	int				sl;
-	int				ed;
-	t_pnt			a;
-	t_pnt			b;
-	t_pnt			**pnt;
 	int				nb_pnt;
 	double			coef;
 	t_color			color1;
