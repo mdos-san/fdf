@@ -6,7 +6,7 @@
 /*   By: mdos-san <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/23 12:07:39 by mdos-san          #+#    #+#             */
-/*   Updated: 2016/02/11 23:18:26 by mdos-san         ###   ########.fr       */
+/*   Updated: 2016/02/12 00:48:24 by mdos-san         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ int	parse(t_par *par)
 	t_chain	*cur;
 	t_chain	*tmp;
 
-	fd = open(par->file, O_RDONLY);
+	fd = open(par->file, O_RDWR);
 	i = 0;
 	line = NULL;
 	data = NULL;
@@ -83,6 +83,8 @@ int	parse(t_par *par)
 		i = 0;
 		if (data)
 			free(data);
+		if (line)
+			free(line);
 	}
 	ajust(par);
 	get_pnt_color(par);
