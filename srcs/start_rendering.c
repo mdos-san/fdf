@@ -6,13 +6,13 @@
 /*   By: mdos-san <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/16 16:25:03 by mdos-san          #+#    #+#             */
-/*   Updated: 2016/02/12 00:07:10 by mdos-san         ###   ########.fr       */
+/*   Updated: 2016/02/12 02:23:21 by mdos-san         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fdf.h"
 
-int	loop_hook(t_par *par)
+int		loop_hook(t_par *par)
 {
 	if (par->event_zoom == 1)
 		chain_zoom(par->chain, 1.1, *par->rep);

@@ -6,7 +6,7 @@
 /*   By: mdos-san <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/28 15:46:13 by mdos-san          #+#    #+#             */
-/*   Updated: 2015/12/28 16:00:55 by mdos-san         ###   ########.fr       */
+/*   Updated: 2016/02/12 02:17:56 by mdos-san         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,4 +24,3 @@ void	expose_event(t_par *par)
 {
 	mlx_expose_hook(par->win, expose_hook, par);
 }
-

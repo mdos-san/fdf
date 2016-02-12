@@ -1,8 +1,20 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   color_step.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mdos-san <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2016/02/12 02:16:35 by mdos-san          #+#    #+#             */
+/*   Updated: 2016/02/12 02:18:47 by mdos-san         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "fdf.h"
 
 t_color	color_step(t_color c_a, t_color c_b, int nbr_stp, int act_stp)
 {
-	t_color	step;
+	t_color		step;
 	double		r;
 	double		g;
 	double		b;

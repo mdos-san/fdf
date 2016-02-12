@@ -6,7 +6,7 @@
 /*   By: mdos-san <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/23 12:07:39 by mdos-san          #+#    #+#             */
-/*   Updated: 2016/02/12 00:48:24 by mdos-san         ###   ########.fr       */
+/*   Updated: 2016/02/12 02:22:44 by mdos-san         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ static void	ajust(t_par *par)
 	}
 }
 
-int	parse(t_par *par)
+int			parse(t_par *par)
 {
 	int		fd;
 	int		i;
@@ -68,7 +68,7 @@ int	parse(t_par *par)
 		{
 			if (par->size_x != i)
 			{
-				ft_putendl("Error in file, please check if all line have the same length.");
+				ft_putendl("Error : check if all line have the same length.");
 				return (-1);
 			}
 		}

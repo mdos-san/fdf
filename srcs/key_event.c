@@ -6,7 +6,7 @@
 /*   By: mdos-san <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/28 15:25:18 by mdos-san          #+#    #+#             */
-/*   Updated: 2016/01/23 10:53:25 by mdos-san         ###   ########.fr       */
+/*   Updated: 2016/02/12 02:20:18 by mdos-san         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,12 +60,12 @@ int		key_rl(int keycode, t_par *par)
 	if (keycode == 65473 || keycode == 122)
 		par->event_height = 0;
 	if (keycode == 53 || keycode == 65307)
-		exit (0);
+		exit(0);
 	return (1);
 }
 
 void	key_event(t_par *par)
 {
-	mlx_hook(par->win, KeyPress, KeyPressMask, key_pr, par);
+	mlx_hook(par->win, KEYPRESS, KEYPRESSMASK, key_pr, par);
 	mlx_key_hook(par->win, key_rl, par);
 }

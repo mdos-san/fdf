@@ -6,7 +6,7 @@
 /*   By: mdos-san <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/17 19:03:46 by mdos-san          #+#    #+#             */
-/*   Updated: 2016/02/12 00:06:43 by mdos-san         ###   ########.fr       */
+/*   Updated: 2016/02/12 02:19:00 by mdos-san         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,7 @@ static void	draw_line(t_par *par)
 	}
 }
 
-void	draw(t_par *par)
+void		draw(t_par *par)
 {
 	t_chain		*cur;
 

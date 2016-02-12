@@ -6,7 +6,7 @@
 #    By: mdos-san <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2015/12/18 17:35:31 by mdos-san          #+#    #+#              #
-#    Updated: 2016/02/12 01:55:12 by mdos-san         ###   ########.fr        #
+#    Updated: 2016/02/12 01:59:13 by mdos-san         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -65,7 +65,7 @@ SRC_C=\
 
 SRC_O=$(SRC_C:.c=.o)
 
-all: objects libft.a includes/libft.h libmlx.a $(SRC_O:%=objects/%) $(NAME)
+all: objects libft.a libmlx.a $(SRC_O:%=objects/%) $(NAME)
 
 objects:
 	@mkdir objects
@@ -76,9 +76,6 @@ libft.a:
 	@cp libs/libft/libft.a .
 	@make fclean -C libs/libft
 	@echo "Done!"
-
-libft.h:
-	@cp libs/libft/includes/libft.h includes
 
 libmlx.a:
 	@echo "Compiling libmlx.a"

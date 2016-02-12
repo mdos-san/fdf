@@ -6,7 +6,7 @@
 /*   By: mdos-san <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/28 12:31:23 by mdos-san          #+#    #+#             */
-/*   Updated: 2016/01/23 14:36:07 by mdos-san         ###   ########.fr       */
+/*   Updated: 2016/02/12 02:16:06 by mdos-san         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int	chain_max(t_chain *chain)
 {
-	int	max;
+	int		max;
 	t_chain	*cur;
 
 	cur = chain;
