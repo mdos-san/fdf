@@ -6,7 +6,7 @@
 /*   By: mdos-san <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/23 12:07:39 by mdos-san          #+#    #+#             */
-/*   Updated: 2016/02/12 02:22:44 by mdos-san         ###   ########.fr       */
+/*   Updated: 2016/02/12 03:05:55 by mdos-san         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,11 @@ int			parse(t_par *par)
 	t_chain	*tmp;
 
 	fd = open(par->file, O_RDWR);
+	if (fd == -1)
+	{
+		ft_putendl("ERROR : open returned -1, stopping fdf.");
+		fdf_exit(par);
+	}
 	i = 0;
 	line = NULL;
 	data = NULL;
@@ -46,7 +51,11 @@ int			parse(t_par *par)
 	while ((ret = get_next_line(fd, &line)))
 	{
 		if (ret == -1)
+		{
+			ft_putendl("ERROR :gnl returned -1, stopping fdf.");
+			fdf_exit(par);
 			return (-1);
+		}
 		data = ft_strsplit(line, ' ');
 		while (data[i])
 		{
@@ -68,7 +77,8 @@ int			parse(t_par *par)
 		{
 			if (par->size_x != i)
 			{
-				ft_putendl("Error : check if all line have the same length.");
+				ft_putendl("ERROR : check if all line have the same length.");
+				fdf_exit(par);
 				return (-1);
 			}
 		}

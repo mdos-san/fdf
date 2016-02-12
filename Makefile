@@ -6,7 +6,7 @@
 #    By: mdos-san <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2015/12/18 17:35:31 by mdos-san          #+#    #+#              #
-#    Updated: 2016/02/12 01:59:13 by mdos-san         ###   ########.fr        #
+#    Updated: 2016/02/12 02:58:25 by mdos-san         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -52,6 +52,7 @@ SRC_C=\
 			vec_multiply.c\
 			vec_add.c\
 			repere_new.c\
+			repere_del.c\
 			repere_rotate.c\
 			parse.c\
 			color_new.c\
@@ -61,6 +62,7 @@ SRC_C=\
 			color_convert.c\
 			color_average.c\
 			color_step.c\
+			fdf_exit.c\
 			main.c
 
 SRC_O=$(SRC_C:.c=.o)

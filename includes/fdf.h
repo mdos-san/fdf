@@ -6,7 +6,7 @@
 /*   By: mdos-san <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/12 09:24:25 by mdos-san          #+#    #+#             */
-/*   Updated: 2016/02/12 02:48:03 by mdos-san         ###   ########.fr       */
+/*   Updated: 2016/02/12 02:58:05 by mdos-san         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -145,6 +145,7 @@ void				vec_rotate_z(t_vec *vec, double angle);
 void				vec_multiply(t_vec *vec, double coef);
 void				vec_add(t_vec *vec, double valeur);
 t_rep				*repere_new(t_vec vx, t_vec vy, t_vec vz, t_pnt origin);
+void				repere_del(t_rep **addr);
 void				repere_rotate_x(t_rep *rep, double angle);
 void				repere_rotate_y(t_rep *rep, double angle);
 void				repere_rotate_z(t_rep *rep, double angle);
@@ -160,5 +161,6 @@ unsigned int		color_convert(t_color color);
 t_color				color_average(t_color a, t_color b);
 t_color				color_step(t_color c_a, t_color c_b, int nbr_stp,\
 						int act_stp);
+void				fdf_exit(t_par *par);
 
 #endif
