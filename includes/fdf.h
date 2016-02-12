@@ -6,7 +6,7 @@
 /*   By: mdos-san <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/12 09:24:25 by mdos-san          #+#    #+#             */
-/*   Updated: 2016/02/12 00:38:18 by mdos-san         ###   ########.fr       */
+/*   Updated: 2016/02/12 01:55:22 by mdos-san         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -132,7 +132,6 @@ void	rotate_x(t_pnt *pnt, double angle, t_rep rep);
 void	rotate_y(t_pnt *pnt, double angle, t_rep rep);
 void	rotate_z(t_pnt *pnt, double angle, t_rep rep);
 void	img_putline(t_par *par, t_pnt a, t_pnt b);
-void	move_position(t_par *par, int x, int y);
 t_grad			*grad_new(double r, double g, double b);
 t_grad			*get_grad(unsigned int *color1, unsigned int *color2, int size);
 void			grad_apply(t_pnt *pnt, t_grad grad, double coef);

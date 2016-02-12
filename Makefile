@@ -6,7 +6,7 @@
 #    By: mdos-san <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2015/12/18 17:35:31 by mdos-san          #+#    #+#              #
-#    Updated: 2016/02/12 00:29:30 by mdos-san         ###   ########.fr        #
+#    Updated: 2016/02/12 01:55:12 by mdos-san         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -42,7 +42,6 @@ SRC_C=\
 			draw.c\
 			get_pnt_color.c\
 			rotate.c\
-			move_position.c\
 			key_event.c\
 			expose_event.c\
 			vec_new.c\
