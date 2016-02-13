@@ -6,7 +6,7 @@
 /*   By: mdos-san <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/12 09:24:25 by mdos-san          #+#    #+#             */
-/*   Updated: 2016/02/12 02:58:05 by mdos-san         ###   ########.fr       */
+/*   Updated: 2016/02/13 07:36:11 by mdos-san         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -108,6 +108,7 @@ typedef struct		s_par
 	char			event_change_color;
 	char			event_zoom;
 	char			event_height;
+	int				i;
 }					t_par;
 
 t_chain				*chain_new(void);
@@ -162,5 +163,6 @@ t_color				color_average(t_color a, t_color b);
 t_color				color_step(t_color c_a, t_color c_b, int nbr_stp,\
 						int act_stp);
 void				fdf_exit(t_par *par);
+void				fdf_error(t_par *par, char *msg);
 
 #endif

@@ -6,7 +6,7 @@
 #    By: mdos-san <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2015/12/18 17:35:31 by mdos-san          #+#    #+#              #
-#    Updated: 2016/02/12 02:58:25 by mdos-san         ###   ########.fr        #
+#    Updated: 2016/02/13 07:17:48 by mdos-san         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -63,6 +63,7 @@ SRC_C=\
 			color_average.c\
 			color_step.c\
 			fdf_exit.c\
+			fdf_error.c\
 			main.c
 
 SRC_O=$(SRC_C:.c=.o)
