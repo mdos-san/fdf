@@ -6,7 +6,7 @@
 /*   By: mdos-san <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/16 16:25:03 by mdos-san          #+#    #+#             */
-/*   Updated: 2016/02/12 02:23:21 by mdos-san         ###   ########.fr       */
+/*   Updated: 2016/02/13 07:47:54 by mdos-san         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,13 +20,15 @@ int		loop_hook(t_par *par)
 		chain_zoom(par->chain, 0.9, *par->rep);
 	if (par->event_height == 1)
 	{
-		par->coef += 0.1;
+		if (par->coef < 100)
+			par->coef += 0.1;
 		chain_del(&par->chain);
 		parse(par);
 	}
 	if (par->event_height == -1)
 	{
-		par->coef -= 0.1;
+		if (par->coef > -100)
+			par->coef -= 0.1;
 		chain_del(&par->chain);
 		parse(par);
 	}
