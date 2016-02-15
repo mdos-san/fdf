@@ -6,7 +6,7 @@
 /*   By: mdos-san <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/14 15:39:19 by mdos-san          #+#    #+#             */
-/*   Updated: 2016/02/13 07:04:19 by mdos-san         ###   ########.fr       */
+/*   Updated: 2016/02/15 07:46:32 by mdos-san         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,12 +19,17 @@ int	main(int ac, char **av)
 {
 	t_par	*par;
 
-	if (ac != 2)
+	if (ac != 2 && ac != 5 && ac != 8)
+	{
+		ft_putendl("Usage : ./fdf map [r g b] [r g b]");
 		return (0);
+	}
 	if (!(par = (t_par*)malloc(sizeof(t_par))))
 		return (0);
-	par->color1 = color_get(0, 0, 255, 0);
-	par->color2 = color_get(0, 255, 0, 0);
+	par->color1 = (ac != 5 && ac != 8) ? color_get(255, 255, 255, 0) :
+				color_get(ft_atoi(av[2]), ft_atoi(av[3]), ft_atoi(av[4]), 0);
+	par->color2 = (ac != 8) ? color_get(255, 255, 255, 0) :
+				color_get(ft_atoi(av[5]), ft_atoi(av[6]), ft_atoi(av[7]), 0);
 	par->coef = 1;
 	par->file = av[1];
 	par->size_x = 0;

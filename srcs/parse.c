@@ -6,7 +6,7 @@
 /*   By: mdos-san <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/23 12:07:39 by mdos-san          #+#    #+#             */
-/*   Updated: 2016/02/13 07:37:59 by mdos-san         ###   ########.fr       */
+/*   Updated: 2016/02/15 07:50:38 by mdos-san         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,7 @@ static void	ajust(t_par *par)
 	draw(par);
 	par->angle_z = 0;
 	par->angle_x = 0;
+	chain_zoom(par->chain, 12, *par->rep);
 	close(par->fd);
 }
 
